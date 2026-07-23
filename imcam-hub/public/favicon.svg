@@ -1,0 +1,45 @@
+<svg
+  width="32"
+  height="32"
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Shield base -->
+  <path
+    d="M16 2L4 7V15C4 22.18 9.12 28.82 16 30.5C22.88 28.82 28 22.18 28 15V7L16 2Z"
+    fill="#0B1F3A"
+  />
+  <!-- Document/folder shape inside -->
+  <path
+    d="M11 10H21C21.55 10 22 10.45 22 11V21C22 21.55 21.55 22 21 22H11C10.45 22 10 21.55 10 21V11C10 10.45 10.45 10 11 10Z"
+    fill="#FAFAF7"
+  />
+  <!-- Document lines -->
+  <path
+    d="M12.5 13H19.5"
+    stroke="#0B1F3A"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+  <path
+    d="M12.5 16H19.5"
+    stroke="#0B1F3A"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+  <path
+    d="M12.5 19H16.5"
+    stroke="#0B1F3A"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+  <!-- Upward chevron accent -->
+  <path
+    d="M14 8L16 5.5L18 8"
+    stroke="#F2994A"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
