@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
+import demoVideo from '../assets/video/gettyimages-2183092187-640_adpp.mp4';
 import {
   ArrowRight,
   Play,
@@ -257,7 +258,7 @@ function VideoShowcase() {
       {/* Background video */}
       <video
         ref={videoRef}
-        src="/assets/background-video.mp4"
+        src={demoVideo}
         muted
         loop
         playsInline
