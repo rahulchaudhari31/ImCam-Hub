@@ -1,62 +1,73 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-
-const variants = {
-  primary: 'bg-amber hover:bg-amber-dark text-white shadow-md hover:shadow-lg',
-  secondary: 'bg-navy hover:bg-navy-light text-white shadow-md hover:shadow-lg',
-  outline: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
-  ghost: 'text-text-secondary hover:text-navy hover:bg-sand',
-};
-
-const sizes = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-sm',
-  lg: 'px-8 py-4 text-base',
-};
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Button({
   children,
-  variant = 'primary',
-  size = 'md',
-  to,
+  variant = "primary",
+  size = "md",
+  className = "",
   href,
-  className = '',
+  external,
+  withArrow,
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
+  const base =
+    "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap";
 
-  if (to) {
-    return (
-      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-        <Link to={to} className={classes} {...props}>
-          {children}
-        </Link>
-      </motion.div>
-    );
-  }
+  const variants = {
+    primary:
+      "bg-navy text-white hover:bg-navy-light shadow-md hover:shadow-lg focus-visible:ring-navy",
+    blue: "bg-blue text-white hover:bg-blue-light shadow-md hover:shadow-lg focus-visible:ring-blue",
+    warm: "bg-amber text-white hover:bg-amber-light shadow-md hover:shadow-lg focus-visible:ring-amber",
+    outline:
+      "border border-sand-dark text-text-primary bg-transparent hover:bg-sand",
+    ghost:
+      "text-text-secondary bg-transparent hover:text-text-primary hover:bg-sand",
+    gradient:
+      "btn-gradient-primary",
+    "gradient-warm":
+      "btn-gradient-warm",
+    "gradient-indigo":
+      "btn-gradient-indigo",
+  };
+
+  const sizes = {
+    sm: "px-5 py-2 text-sm",
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-3.5 text-base",
+  };
+
+  const classes = `${base} ${variants[variant] || ''} ${sizes[size] || ''} ${className}`;
+
+  const content = (
+    <>
+      <span className="relative z-10">{children}</span>
+      {withArrow && (
+        <ArrowRight className="relative z-10 ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      )}
+    </>
+  );
 
   if (href) {
+    if (external) {
+      return (
+        <a href={href} className={classes} target="_blank" rel="noopener noreferrer" {...props}>
+          <span className="relative z-10">{children}</span>
+          {withArrow && (
+            <ArrowUpRight className="relative z-10 ml-2 h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          )}
+        </a>
+      );
+    }
     return (
-      <motion.a
-        href={href}
-        className={classes}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        {...props}
-      >
-        {children}
-      </motion.a>
+      <a href={href} className={classes} {...props}>
+        {content}
+      </a>
     );
   }
 
   return (
-    <motion.button
-      className={classes}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      {...props}
-    >
-      {children}
-    </motion.button>
+    <button className={`${classes} group`} {...props}>
+      {content}
+    </button>
   );
 }

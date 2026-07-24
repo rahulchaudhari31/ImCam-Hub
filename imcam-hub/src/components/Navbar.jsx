@@ -18,24 +18,36 @@ const featureItems = [
     path: '/features/admin',
     icon: LayoutDashboard,
     description: 'Firm-wide command center',
+    iconBg: 'bg-indigo/10',
+    iconHover: 'group-hover:bg-indigo/20',
+    textColor: 'text-indigo',
   },
   {
     name: 'Caseworker Portal',
     path: '/features/caseworker',
     icon: Users,
     description: 'Matter management & AI drafting',
+    iconBg: 'bg-blue/10',
+    iconHover: 'group-hover:bg-blue/20',
+    textColor: 'text-blue',
   },
   {
     name: 'Candidate Portal',
     path: '/features/candidate',
     icon: UserCheck,
     description: 'Applicant self-service',
+    iconBg: 'bg-emerald/10',
+    iconHover: 'group-hover:bg-emerald/20',
+    textColor: 'text-emerald',
   },
   {
     name: 'Client Portal',
     path: '/features/client',
     icon: Building2,
     description: 'Employer oversight & reporting',
+    iconBg: 'bg-purple/10',
+    iconHover: 'group-hover:bg-purple/20',
+    textColor: 'text-purple',
   },
 ];
 
@@ -104,7 +116,7 @@ export default function Navbar() {
                       to={link.path}
                       className={`px-4 py-2 rounded-full text-[15px] font-medium transition-all duration-200 ${
                         location.pathname.startsWith(link.path)
-                          ? 'text-navy bg-navy/[0.06]'
+                          ? 'text-blue bg-blue-pale'
                           : 'text-text-secondary hover:text-navy hover:bg-sand/60'
                       }`}
                     >
@@ -131,14 +143,14 @@ export default function Navbar() {
                                   to={item.path}
                                   className="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-sand/70 transition-colors group"
                                 >
-                                  <div className="w-10 h-10 rounded-xl bg-navy/[0.06] group-hover:bg-amber/10 flex items-center justify-center shrink-0 transition-colors">
+                                  <div className={`w-10 h-10 rounded-xl ${item.iconBg} ${item.iconHover} flex items-center justify-center shrink-0 transition-colors`}>
                                     <Icon
                                       size={20}
-                                      className="text-navy group-hover:text-amber transition-colors"
+                                      className={`${item.textColor} transition-colors`}
                                     />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-semibold text-navy group-hover:text-amber transition-colors">
+                                    <div className={`text-sm font-semibold text-navy group-hover:${item.textColor} transition-colors`}>
                                       {item.name}
                                     </div>
                                     <div className="text-xs text-text-muted mt-0.5">
@@ -167,7 +179,7 @@ export default function Navbar() {
                     to={link.path}
                     className={`px-4 py-2 rounded-full text-[15px] font-medium transition-all duration-200 ${
                       location.pathname === link.path
-                        ? 'text-navy bg-navy/[0.06]'
+                        ? 'text-blue bg-blue-pale'
                         : 'text-text-secondary hover:text-navy hover:bg-sand/60'
                     }`}
                   >
@@ -254,7 +266,7 @@ export default function Navbar() {
                               onClick={() => setMobileOpen(false)}
                               className={`flex-1 px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${
                                 location.pathname.startsWith(link.path)
-                                  ? 'text-navy bg-navy/[0.06]'
+                                  ? 'text-blue bg-blue-pale'
                                   : 'text-text-secondary hover:text-navy hover:bg-sand/60'
                               }`}
                             >
@@ -301,7 +313,7 @@ export default function Navbar() {
                                       >
                                         <Icon
                                           size={18}
-                                          className="text-text-muted group-hover:text-amber transition-colors shrink-0"
+                                          className={`text-text-muted group-hover:${item.textColor} transition-colors shrink-0`}
                                         />
                                         <span className="text-sm text-text-secondary group-hover:text-navy transition-colors">
                                           {item.name}
@@ -321,7 +333,7 @@ export default function Navbar() {
                           onClick={() => setMobileOpen(false)}
                           className={`block px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${
                             location.pathname === link.path
-                              ? 'text-navy bg-navy/[0.06]'
+                              ? 'text-blue bg-blue-pale'
                               : 'text-text-secondary hover:text-navy hover:bg-sand/60'
                           }`}
                         >

@@ -34,6 +34,8 @@ const plans = [
     ],
     cta: 'Start Free Trial',
     popular: false,
+    checkColor: 'text-blue',
+    ctaClass: 'border-2 border-navy text-navy hover:bg-navy hover:text-white',
   },
   {
     name: 'Pro',
@@ -55,6 +57,8 @@ const plans = [
     ],
     cta: 'Book a Demo',
     popular: true,
+    checkColor: 'text-blue',
+    ctaClass: 'btn-gradient-primary',
   },
 ];
 
@@ -116,7 +120,7 @@ const faqs = [
 
 function renderCell(value) {
   if (value === true) {
-    return <CheckCircle2 size={18} className="text-teal mx-auto" />;
+    return <CheckCircle2 size={18} className="text-blue mx-auto" />;
   }
   if (value === false) {
     return <Minus size={16} className="text-text-muted/40 mx-auto" />;
@@ -180,9 +184,9 @@ export default function Pricing() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-navy/[0.06] text-navy text-xs font-semibold rounded-full mb-5"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-5"
               >
-                <Sparkles size={12} className="text-amber" />
+                <Sparkles size={12} />
                 Pricing
               </motion.span>
               <motion.h1
@@ -195,7 +199,7 @@ export default function Pricing() {
                 <span className="relative inline-block">
                   Pricing
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-[3px] bg-amber rounded-full"
+                    className="absolute -bottom-1 left-0 h-[3px] bg-gradient-to-r from-blue to-blue-light rounded-full"
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{ duration: 0.6, delay: 0.5 }}
@@ -216,8 +220,8 @@ export default function Pricing() {
               <div className="flex flex-wrap items-center gap-4">
                 {[
                   { icon: Star, label: '4.9/5', sublabel: 'on G2', color: 'text-amber', bg: 'bg-amber/10', value: 4.9, suffix: '/5', isDecimal: true },
-                  { icon: Users, label: '200+', sublabel: 'firms trust us', color: 'text-teal', bg: 'bg-teal/10', value: 200, suffix: '+' },
-                  { icon: Shield, label: '14', sublabel: 'day free trial', color: 'text-navy', bg: 'bg-navy/[0.06]', value: 14, suffix: '-day' },
+                  { icon: Users, label: '200+', sublabel: 'firms trust us', color: 'text-blue', bg: 'bg-blue-pale', value: 200, suffix: '+' },
+                  { icon: Shield, label: '14', sublabel: 'day free trial', color: 'text-blue', bg: 'bg-blue-soft', value: 14, suffix: '-day' },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -273,8 +277,8 @@ export default function Pricing() {
                 className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-5 py-3 shadow-[0_8px_30px_rgba(11,31,58,0.12)] border border-sand-dark"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-9 h-9 rounded-xl bg-teal/10 flex items-center justify-center">
-                    <TrendingUp size={18} className="text-teal" />
+                  <div className="w-9 h-9 rounded-xl bg-blue-pale flex items-center justify-center">
+                    <TrendingUp size={18} className="text-blue" />
                   </div>
                   <div>
                     <div className="text-xs text-text-muted">Starting from</div>
@@ -304,7 +308,7 @@ export default function Pricing() {
             <button
               onClick={() => setIsAnnual(!isAnnual)}
               className={`relative w-14 h-7 rounded-full transition-all duration-300 ${
-                isAnnual ? 'bg-amber' : 'bg-navy/20'
+                isAnnual ? 'bg-blue' : 'bg-navy/20'
               }`}
               aria-label={`Switch to ${isAnnual ? 'monthly' : 'annual'} billing`}
             >
@@ -326,7 +330,7 @@ export default function Pricing() {
                   initial={{ opacity: 0, scale: 0.8, x: -8 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.8, x: -8 }}
-                  className="inline-flex items-center px-2.5 py-1 bg-teal/10 text-teal-dark text-[11px] font-bold rounded-full tracking-wide"
+                  className="inline-flex items-center px-2.5 py-1 bg-blue-pale text-blue text-[11px] font-bold rounded-full tracking-wide"
                 >
                   SAVE 20%
                 </motion.span>
@@ -341,14 +345,14 @@ export default function Pricing() {
                 key={plan.name}
                 className={`relative rounded-3xl p-8 md:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                   plan.popular
-                    ? 'bg-white border-2 border-amber shadow-[0_8px_40px_rgba(242,153,74,0.15)] hover:shadow-[0_12px_50px_rgba(242,153,74,0.25)]'
+                    ? 'bg-white border-2 border-blue shadow-[0_8px_40px_rgba(37,99,235,0.15)] hover:shadow-[0_12px_50px_rgba(37,99,235,0.25)]'
                     : 'bg-white border-2 border-navy/15 shadow-[0_4px_20px_rgba(11,31,58,0.06)] hover:shadow-[0_8px_30px_rgba(11,31,58,0.1)]'
                 }`}
               >
                 {/* Badge */}
                 {plan.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-4 py-1.5 bg-amber text-white text-[11px] font-bold rounded-full tracking-wide shadow-md">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue text-white text-[11px] font-bold rounded-full tracking-wide shadow-md">
                       MOST POPULAR
                     </span>
                   </div>
@@ -367,7 +371,7 @@ export default function Pricing() {
                     <span className="text-sm text-text-muted font-medium">/mo</span>
                   </div>
                   {isAnnual && (
-                    <p className="text-xs text-teal font-semibold mb-1">
+                    <p className="text-xs text-blue font-semibold mb-1">
                       Save ${(plan.monthlyPrice - plan.annualPrice) * 12}/year
                     </p>
                   )}
@@ -382,9 +386,7 @@ export default function Pricing() {
                     <li key={j} className="flex items-start gap-3 text-sm">
                       <CheckCircle2
                         size={18}
-                        className={`flex-shrink-0 mt-0.5 ${
-                          plan.popular ? 'text-amber' : 'text-teal'
-                        }`}
+                        className={`flex-shrink-0 mt-0.5 ${plan.checkColor}`}
                       />
                       <span className="text-text-secondary">{feature}</span>
                     </li>
@@ -392,21 +394,12 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                {plan.popular ? (
-                  <Link
-                    to="/book-demo"
-                    className="flex items-center justify-center gap-2 w-full bg-amber hover:bg-amber-dark text-white px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.02] active:scale-[0.98]"
-                  >
-                    {plan.cta} <ArrowRight size={16} />
-                  </Link>
-                ) : (
-                  <Link
-                    to="/book-demo"
-                    className="flex items-center justify-center gap-2 w-full border-2 border-navy text-navy hover:bg-navy hover:text-white px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
-                  >
-                    {plan.cta} <ArrowRight size={16} />
-                  </Link>
-                )}
+                <Link
+                  to="/book-demo"
+                  className={`flex items-center justify-center gap-2 w-full ${plan.ctaClass} px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]`}
+                >
+                  {plan.cta} <ArrowRight size={16} />
+                </Link>
               </div>
             ))}
           </div>
@@ -420,7 +413,7 @@ export default function Pricing() {
         <div className="container-app">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Full Feature Comparison
+              Full Feature <span className="gradient-text">Comparison</span>
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
               A detailed look at what&apos;s included in every plan.
@@ -439,7 +432,7 @@ export default function Pricing() {
                       Standard
                     </th>
                     <th className="text-center py-4 px-6 font-semibold text-navy w-[25%] sticky top-0 bg-sand/70 backdrop-blur-sm z-10">
-                      <span className="text-amber">Pro</span>
+                      <span className="text-blue">Pro</span>
                     </th>
                   </tr>
                 </thead>
@@ -451,7 +444,7 @@ export default function Pricing() {
                       onMouseLeave={() => setHoveredRow(null)}
                       className={`border-t border-sand-dark transition-colors duration-150 ${
                         hoveredRow === i
-                          ? 'bg-amber/[0.04]'
+                          ? 'bg-blue/[0.04]'
                           : i % 2 === 0
                           ? 'bg-white'
                           : 'bg-sand/30'
@@ -482,7 +475,7 @@ export default function Pricing() {
         <div className="container-app max-w-3xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy">
-              Billing Questions
+              Billing <span className="gradient-text">Questions</span>
             </h2>
           </div>
 
@@ -505,7 +498,7 @@ export default function Pricing() {
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 container-app text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-            Ready to see ImCam Hub in action?
+            Ready to see ImCam Hub <span className="text-blue-lighter">in action</span>?
           </h2>
           <p className="text-white/60 max-w-xl mx-auto mb-8">
             Start your 14-day free trial or book a walkthrough with our
@@ -513,7 +506,7 @@ export default function Pricing() {
           </p>
           <Link
             to="/book-demo"
-            className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
           >
             Book a Free Demo <ArrowRight size={18} />
           </Link>

@@ -36,7 +36,7 @@ function AnimateOnScroll({ children, className = '', delay = 0 }) {
 
 const fieldBase =
   'w-full px-4 py-3 rounded-xl border bg-white text-sm text-navy placeholder:text-text-muted/50 focus:outline-none transition-colors';
-const fieldIdle = 'border-sand-dark focus:ring-2 focus:ring-amber/40 focus:border-amber';
+const fieldIdle = 'border-sand-dark focus:ring-2 focus:ring-blue/30 focus:border-blue';
 const fieldError = 'border-red-400 focus:ring-2 focus:ring-red-200';
 
 function FormField({ label, name, required, error, children }) {
@@ -127,7 +127,7 @@ export default function BookDemo() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-flex items-center px-4 py-1.5 bg-amber/10 text-amber-dark text-xs font-semibold rounded-full mb-5">
+            <span className="inline-flex items-center px-4 py-1.5 bg-indigo-pale text-indigo text-xs font-semibold rounded-full mb-5">
               Book a Demo
             </span>
             <h1 className="text-4xl sm:text-5xl font-heading font-bold text-navy mb-5 leading-tight">
@@ -167,9 +167,9 @@ export default function BookDemo() {
                       damping: 20,
                       delay: 0.15,
                     }}
-                    className="w-20 h-20 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                    className="w-20 h-20 bg-emerald-pale rounded-full flex items-center justify-center mx-auto mb-6"
                   >
-                    <CheckCircle2 size={40} className="text-teal" />
+                    <CheckCircle2 size={40} className="text-emerald" />
                   </motion.div>
                   <h2 className="text-3xl font-heading font-bold text-navy mb-3">
                     Demo Request Received
@@ -182,7 +182,7 @@ export default function BookDemo() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
                       to="/"
-                      className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white px-7 py-3 rounded-full text-sm font-semibold transition-all active:scale-[0.98]"
+                      className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-7 py-3 rounded-full text-sm font-semibold transition-all active:scale-[0.98]"
                     >
                       Return Home
                     </Link>
@@ -205,7 +205,8 @@ export default function BookDemo() {
                 className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-start"
               >
                 {/* LEFT: Form */}
-                <div className="bg-white rounded-3xl border border-sand-dark shadow-lg p-7 md:p-10">
+                <div className="bg-white rounded-3xl border border-sand-dark shadow-lg p-7 md:p-10 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue via-indigo to-purple" />
                   <form onSubmit={handleSubmit} noValidate className="space-y-5">
                     <FormField
                       label="Firm / Company Name"
@@ -302,7 +303,7 @@ export default function BookDemo() {
 
                     <button
                       type="submit"
-                      className="w-full flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <Send size={16} /> Book My Free Demo
                     </button>
@@ -348,23 +349,27 @@ export default function BookDemo() {
                         {
                           icon: Clock,
                           text: 'We confirm your preferred slot within 24 hours',
+                          color: 'bg-blue/10 text-blue',
                         },
                         {
                           icon: Play,
                           text: '30-minute live walkthrough with a product specialist',
+                          color: 'bg-indigo/10 text-indigo',
                         },
                         {
                           icon: FileText,
                           text: 'Custom quote based on your firm size and needs',
+                          color: 'bg-emerald/10 text-emerald',
                         },
                         {
                           icon: Shield,
                           text: 'No commitment — decide at your own pace',
+                          color: 'bg-purple/10 text-purple',
                         },
                       ].map((step, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-navy/[0.06] flex items-center justify-center shrink-0">
-                            <step.icon size={16} className="text-navy" />
+                          <div className={`w-8 h-8 rounded-lg ${step.color} flex items-center justify-center shrink-0`}>
+                            <step.icon size={16} />
                           </div>
                           <p className="text-sm text-text-secondary pt-1">
                             {step.text}
@@ -376,17 +381,18 @@ export default function BookDemo() {
 
                   {/* Testimonial */}
                   <AnimateOnScroll delay={0.16}>
-                    <div className="bg-navy rounded-2xl p-6 relative">
+                    <div className="bg-gradient-to-br from-navy to-navy-light rounded-2xl p-6 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-indigo/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-xl" />
                       <Quote
                         size={28}
-                        className="text-amber/30 absolute top-4 left-5"
+                        className="text-indigo-light/30 absolute top-4 left-5"
                       />
-                      <p className="text-white/80 text-sm leading-relaxed italic mb-4 pl-4">
+                      <p className="text-white/80 text-sm leading-relaxed italic mb-4 pl-4 relative z-10">
                         &ldquo;We went from 3 different tools and endless email
                         chains to one system in under a month. Our caseworkers
                         saved 10+ hours a week within the first quarter.&rdquo;
                       </p>
-                      <div className="flex items-center gap-3 pl-4">
+                      <div className="flex items-center gap-3 pl-4 relative z-10">
                         <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
                           <Users size={16} className="text-white/60" />
                         </div>

@@ -26,7 +26,10 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy">
+    <footer className="bg-navy relative overflow-hidden">
+      {/* Subtle gradient accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue/40 to-transparent" />
+
       <div className="section-padding">
         <div className="container-app">
           {/* Main grid: 4 columns */}
@@ -47,9 +50,9 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="w-9 h-9 rounded-xl bg-white/[0.06] hover:bg-amber/20 flex items-center justify-center transition-colors group"
+                    className="w-9 h-9 rounded-xl bg-white/[0.06] hover:bg-blue/20 flex items-center justify-center transition-colors group"
                   >
-                    <span className="text-white/50 group-hover:text-amber transition-colors text-xs font-bold">
+                    <span className="text-white/50 group-hover:text-blue-light transition-colors text-xs font-bold">
                       {social.label}
                     </span>
                   </a>
@@ -114,7 +117,7 @@ export default function Footer() {
                     href="mailto:hello@incamhub.com"
                     className="flex items-start gap-3 text-sm text-white/50 hover:text-white transition-colors group"
                   >
-                    <Mail size={20} className="shrink-0 mt-0.5 text-white/40 group-hover:text-amber transition-colors" />
+                    <Mail size={20} className="shrink-0 mt-0.5 text-white/40 group-hover:text-blue transition-colors" />
                     <span>hello@incamhub.com</span>
                   </a>
                 </li>
@@ -123,7 +126,7 @@ export default function Footer() {
                     href="tel:+18005551234"
                     className="flex items-start gap-3 text-sm text-white/50 hover:text-white transition-colors group"
                   >
-                    <Phone size={20} className="shrink-0 mt-0.5 text-white/40 group-hover:text-amber transition-colors" />
+                    <Phone size={20} className="shrink-0 mt-0.5 text-white/40 group-hover:text-blue transition-colors" />
                     <span>1-800-555-1234</span>
                   </a>
                 </li>

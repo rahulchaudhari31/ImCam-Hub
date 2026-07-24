@@ -46,21 +46,25 @@ const trustedFeatures = [
     icon: Shield,
     title: 'Role-Based Access',
     description: 'Granular permissions ensure every user sees only what they need.',
+    color: 'bg-indigo/10 text-indigo',
   },
   {
     icon: Workflow,
     title: 'Automated Case Flows',
     description: 'Intake, review, and approval pipelines run without manual handoffs.',
+    color: 'bg-emerald/10 text-emerald',
   },
   {
     icon: BarChart3,
     title: 'Real-Time Visibility',
     description: 'Live dashboards track every case, deadline, and team performance.',
+    color: 'bg-cyan/10 text-cyan',
   },
   {
     icon: Lock,
     title: 'Bank-Grade Security',
     description: 'End-to-end encryption, SOC 2 compliance, and audit-ready logging.',
+    color: 'bg-purple/10 text-purple',
   },
 ];
 
@@ -71,6 +75,7 @@ const aiAgents = [
     description:
       'Collects and pre-validates client information from intake forms, passports, and supporting documents — automatically structuring data for caseworker review.',
     badges: ['AUTO ONBOARD', 'AML COMPLIANT'],
+    color: 'bg-blue/10 text-blue',
   },
   {
     icon: FileCheck,
@@ -78,6 +83,7 @@ const aiAgents = [
     description:
       'Scans uploaded documents for expiry dates, naming conventions, and format compliance. Flags anomalies before they reach the caseworker\'s desk.',
     badges: ['REAL-TIME CHECK', 'OCR POWERED'],
+    color: 'bg-indigo/10 text-indigo',
   },
   {
     icon: Mail,
@@ -85,6 +91,7 @@ const aiAgents = [
     description:
       'Drafts context-aware responses to client and government correspondence using case history, templates, and tone calibration — ready for one-click send.',
     badges: ['AI DRAFTED', 'BRAND TONE'],
+    color: 'bg-purple/10 text-purple',
   },
   {
     icon: FileSearch,
@@ -92,6 +99,7 @@ const aiAgents = [
     description:
       'Parses immigration forms, policy documents, and contracts to extract key clauses, deadlines, and obligations — highlighting risk areas automatically.',
     badges: ['NLP ENGINE', 'RISK ALERT'],
+    color: 'bg-emerald/10 text-emerald',
   },
   {
     icon: Receipt,
@@ -99,6 +107,7 @@ const aiAgents = [
     description:
       'Generates billing entries from logged time, attaches them to client records, and delivers polished invoices with full case-level cost breakdowns.',
     badges: ['AUTO BILL', 'CLIENT READY'],
+    color: 'bg-cyan/10 text-cyan',
   },
   {
     icon: Shield,
@@ -106,6 +115,7 @@ const aiAgents = [
     description:
       'Continuously scans case files against current IRCC, USCIS, and local regulatory requirements — flagging expiring documents, missing filings, and policy changes before they become issues.',
     badges: ['24/7 MONITOR', 'POLICY SYNC'],
+    color: 'bg-orange/10 text-orange',
   },
 ];
 
@@ -115,32 +125,36 @@ const coreModules = [
     title: 'Admin Dashboard',
     description: 'Firm-wide dashboard, user management, billing oversight, compliance reporting, and audit trails.',
     path: '/features/admin',
-    color: 'bg-amber/10',
-    iconColor: 'text-amber',
+    color: 'bg-indigo/10',
+    iconColor: 'text-indigo',
+    hoverColor: 'group-hover:text-indigo',
   },
   {
     icon: Users,
     title: 'Caseworker Portal',
     description: 'Matter management, document checklists, deadline tracking, AI-assisted drafting, and workload balancing.',
     path: '/features/caseworker',
-    color: 'bg-teal/10',
-    iconColor: 'text-teal',
+    color: 'bg-emerald/10',
+    iconColor: 'text-emerald',
+    hoverColor: 'group-hover:text-emerald',
   },
   {
     icon: UserCheck,
     title: 'Candidate Portal',
     description: 'Secure portal, real-time status tracking, document upload, e-signatures, and direct messaging.',
     path: '/features/candidate',
-    color: 'bg-navy/10',
-    iconColor: 'text-navy',
+    color: 'bg-blue/10',
+    iconColor: 'text-blue',
+    hoverColor: 'group-hover:text-blue',
   },
   {
     icon: MessageSquare,
     title: 'Client Portal',
     description: 'Multi-candidate dashboard, compliance tracking, bulk uploads, invoicing, and reporting exports.',
     path: '/features/client',
-    color: 'bg-amber/10',
-    iconColor: 'text-amber',
+    color: 'bg-purple/10',
+    iconColor: 'text-purple',
+    hoverColor: 'group-hover:text-purple',
   },
 ];
 
@@ -150,18 +164,21 @@ const whyFeatures = [
     title: 'Unified Client Communication',
     description:
       'Every message, document request, and status update lives in one thread per case. No more scattered email chains or lost context — clients and caseworkers stay aligned from day one.',
+    color: 'bg-emerald/10 text-emerald',
   },
   {
     icon: Clock,
     title: 'Access on the Go',
     description:
       'Review cases, approve documents, and respond to clients from any device. ImCam Hub is built mobile-first so your team never misses a critical deadline, whether at the office or in court.',
+    color: 'bg-cyan/10 text-cyan',
   },
   {
     icon: Globe,
     title: 'Enhanced Scheduling',
     description:
       'Calendar integration syncs interviews, filing deadlines, and hearing dates across your entire caseload. Automated reminders keep every milestone on track without manual follow-ups.',
+    color: 'bg-purple/10 text-purple',
   },
 ];
 
@@ -229,10 +246,10 @@ function VideoShowcase() {
   }, []);
 
   const highlights = [
-    { icon: FileCheck, stat: '10,000+', label: 'Cases Managed' },
-    { icon: Clock, stat: '60%', label: 'Faster Processing' },
-    { icon: Users, stat: '98%', label: 'Client Satisfaction' },
-    { icon: Shield, stat: '100%', label: 'Compliance Rate' },
+    { icon: FileCheck, stat: '10,000+', label: 'Cases Managed', color: 'text-emerald' },
+    { icon: Clock, stat: '60%', label: 'Faster Processing', color: 'text-cyan' },
+    { icon: Users, stat: '98%', label: 'Client Satisfaction', color: 'text-purple' },
+    { icon: Shield, stat: '100%', label: 'Compliance Rate', color: 'text-indigo' },
   ];
 
   return (
@@ -273,7 +290,7 @@ function VideoShowcase() {
             className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight"
           >
             See ImCam Hub{' '}
-            <span className="text-amber">in Action</span>
+            <span className="text-cyan-light">in Action</span>
           </motion.h2>
 
           <motion.p
@@ -283,8 +300,10 @@ function VideoShowcase() {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/70 max-w-xl mb-10 leading-relaxed"
           >
-            Watch how our AI-powered platform streamlines immigration case
-            management — from client intake and document review through
+            Watch how our <span className="text-cyan-light font-medium">AI Powered</span> platform streamlines{' '}
+            <span className="text-cyan-light font-medium">immigration</span>{' '}
+            <span className="text-cyan-light font-medium">case management</span> — from client intake and{' '}
+            <span className="text-cyan-light font-medium">document</span> review through
             compliance checks and final resolution.
           </motion.p>
 
@@ -302,7 +321,7 @@ function VideoShowcase() {
                 whileHover={{ y: -3 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-colors"
               >
-                <item.icon size={20} className="text-amber mb-2" />
+                <item.icon size={20} className={`${item.color} mb-2`} />
                 <div className="text-2xl font-bold text-white">{item.stat}</div>
                 <div className="text-xs text-white/60">{item.label}</div>
               </motion.div>
@@ -384,28 +403,15 @@ export default function Home() {
                 One Platform.
                 <br />
                 Every Case,{' '}
-                <span className="text-amber">Handled.</span>
+                <span className="gradient-text">Handled.</span>
               </h1>
               <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
-                ImCam Hub is the AI-powered case management system built for
-                immigration practices. From client intake through final
-                resolution — intake, document review, compliance checks, and
+                ImCam Hub is the <span className="text-accent-blue font-medium">AI Powered</span>{' '}
+                <span className="text-accent-blue font-medium">case management</span> system built for{' '}
+                <span className="text-accent-blue font-medium">immigration</span> practices. From client intake through final
+                resolution — intake, <span className="text-accent-blue font-medium">document</span> review, compliance checks, and
                 invoicing — managed in one unified system.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/book-demo"
-                  className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
-                >
-                  Book a Free Demo <ArrowRight size={18} />
-                </Link>
-                <Link
-                  to="/features"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-navy text-navy hover:bg-navy hover:text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
-                >
-                  <Play size={16} /> Explore Features
-                </Link>
-              </div>
             </motion.div>
 
             {/* Right: Image */}
@@ -435,8 +441,8 @@ export default function Home() {
             {trustedFeatures.map((feature, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <div className="flex items-start gap-4 p-5 rounded-2xl bg-sand/50 hover:bg-sand transition-colors">
-                  <div className="w-11 h-11 rounded-xl bg-navy/[0.06] flex items-center justify-center shrink-0">
-                    <feature.icon size={22} className="text-navy" />
+                  <div className={`w-11 h-11 rounded-xl ${feature.color} flex items-center justify-center shrink-0`}>
+                    <feature.icon size={22} />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-navy mb-1">
@@ -454,16 +460,17 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          AI SYSTEM — 5-Tile Grid
+          AI SYSTEM — 6-Tile Grid
           ========================================= */}
-      <section className="section-padding">
-        <div className="container-app">
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-soft via-white to-indigo-pale/30 pointer-events-none" />
+        <div className="container-app relative z-10">
           <AnimatedSection className="text-center mb-14">
-            <span className="inline-flex items-center px-4 py-1.5 bg-amber/10 text-amber-dark text-xs font-semibold rounded-full mb-4">
-              AI-Powered
+            <span className="inline-flex items-center px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-4">
+              AI Powered
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              One AI System. Every Case Handled.
+              One AI System. Every Case <span className="gradient-text">Handled.</span>
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
               Five intelligent agents work behind the scenes to automate
@@ -475,9 +482,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {aiAgents.map((agent, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl border border-sand-dark p-6 h-full hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-navy/[0.06] flex items-center justify-center mb-4">
-                    <agent.icon size={24} className="text-navy" />
+                <div className="bg-white rounded-2xl border border-sand-dark/80 p-6 h-full hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-all duration-300">
+                  <div className={`w-12 h-12 rounded-2xl ${agent.color} flex items-center justify-center mb-4`}>
+                    <agent.icon size={24} />
                   </div>
                   <h3 className="text-base font-heading font-semibold text-navy mb-2">
                     {agent.title}
@@ -489,7 +496,7 @@ export default function Home() {
                     {agent.badges.map((badge) => (
                       <span
                         key={badge}
-                        className="inline-flex items-center px-2.5 py-1 bg-sand text-text-muted text-[11px] font-bold tracking-wide rounded-md"
+                        className="inline-flex items-center px-2.5 py-1 bg-sand text-navy text-[11px] font-bold tracking-wide rounded-md"
                       >
                         {badge}
                       </span>
@@ -508,11 +515,11 @@ export default function Home() {
       <section className="section-padding bg-sand">
         <div className="container-app">
           <AnimatedSection className="text-center mb-12">
-            <span className="inline-flex items-center px-4 py-1.5 bg-navy/[0.06] text-navy text-xs font-semibold rounded-full mb-4">
+            <span className="inline-flex items-center px-4 py-1.5 bg-indigo-pale text-indigo text-xs font-semibold rounded-full mb-4">
               Core Modules
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy">
-              A Portal for Every Role
+              A Portal for Every <span className="gradient-text-indigo">Role</span>
             </h2>
           </AnimatedSection>
 
@@ -520,19 +527,19 @@ export default function Home() {
             {coreModules.map((mod, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <Link to={mod.path} className="block group h-full">
-                  <div className="bg-white rounded-2xl border border-sand-dark p-6 h-full flex flex-col hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-all">
+                  <div className="bg-white rounded-2xl border border-sand-dark p-6 h-full flex flex-col hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-all duration-300">
                     <div
-                      className={`w-12 h-12 ${mod.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                      className={`w-12 h-12 ${mod.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                     >
                       <mod.icon size={24} className={mod.iconColor} />
                     </div>
-                    <h3 className="text-base font-heading font-semibold text-navy mb-2 group-hover:text-amber transition-colors">
+                    <h3 className={`text-base font-heading font-semibold text-navy mb-2 ${mod.hoverColor} transition-colors`}>
                       {mod.title}
                     </h3>
                     <p className="text-sm text-text-secondary leading-relaxed mb-4 flex-1">
                       {mod.description}
                     </p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber group-hover:gap-2.5 transition-all">
+                    <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${mod.iconColor} group-hover:gap-2.5 transition-all`}>
                       Learn more <ArrowRight size={14} />
                     </span>
                   </div>
@@ -546,18 +553,19 @@ export default function Home() {
       {/* =========================================
           WHY IMCAM HUB — With Image
           ========================================= */}
-      <section className="section-padding bg-white">
-        <div className="container-app">
+      <section className="section-padding bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-pale/20 via-transparent to-cyan-pale/20 pointer-events-none" />
+        <div className="container-app relative z-10">
           <AnimatedSection className="text-center mb-14">
-            <span className="inline-flex items-center px-4 py-1.5 bg-teal/10 text-teal-dark text-xs font-semibold rounded-full mb-4">
+            <span className="inline-flex items-center px-4 py-1.5 bg-emerald-pale text-emerald text-xs font-semibold rounded-full mb-4">
               Why ImCam Hub
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              Built Around Your Practice
+              Built Around Your <span className="gradient-text-emerald">Practice</span>
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
-              Every detail of ImCam Hub is designed around the real workflows
-              of immigration professionals — not generic project management
+              Every detail of ImCam Hub is designed around the real <span className="text-accent-emerald font-medium">workflow</span>s
+              of <span className="text-accent-emerald font-medium">immigration</span> professionals — not generic project management
               logic.
             </p>
           </AnimatedSection>
@@ -567,8 +575,8 @@ export default function Home() {
               <div className="space-y-8">
                 {whyFeatures.map((feature, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-amber/10 rounded-2xl flex items-center justify-center shrink-0">
-                      <feature.icon size={24} className="text-amber" />
+                    <div className={`w-12 h-12 ${feature.color} rounded-2xl flex items-center justify-center shrink-0`}>
+                      <feature.icon size={24} />
                     </div>
                     <div>
                       <h3 className="text-lg font-heading font-semibold text-navy mb-2">
@@ -604,11 +612,11 @@ export default function Home() {
       <section className="section-padding bg-sand">
         <div className="container-app">
           <AnimatedSection className="text-center mb-12">
-            <span className="inline-flex items-center px-4 py-1.5 bg-navy/[0.06] text-navy text-xs font-semibold rounded-full mb-4">
+            <span className="inline-flex items-center px-4 py-1.5 bg-purple-pale text-purple text-xs font-semibold rounded-full mb-4">
               FAQ
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy">
-              Questions from Firms Worldwide
+              Questions from <span className="gradient-text-purple">Firms Worldwide</span>
             </h2>
           </AnimatedSection>
 
@@ -622,15 +630,16 @@ export default function Home() {
 
             {/* Right: Contact card */}
             <AnimatedSection delay={0.15}>
-              <div className="bg-navy rounded-2xl p-8 text-white sticky top-28">
-                <h3 className="font-heading font-semibold text-lg mb-2">
+              <div className="bg-gradient-to-br from-navy to-navy-light rounded-2xl p-8 text-white sticky top-28 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
+                <h3 className="font-heading font-semibold text-lg mb-2 relative z-10">
                   Still have questions?
                 </h3>
-                <p className="text-white/60 text-sm mb-6 leading-relaxed">
+                <p className="text-white/60 text-sm mb-6 leading-relaxed relative z-10">
                   Our team is happy to walk you through how ImCam Hub fits
                   your practice.
                 </p>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 relative z-10">
                   <a
                     href="mailto:hello@incamhub.com"
                     className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
@@ -656,7 +665,7 @@ export default function Home() {
                 </div>
                 <Link
                   to="/book-demo"
-                  className="flex items-center justify-center gap-2 w-full bg-amber hover:bg-amber-dark text-white px-6 py-3 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                  className="btn-gradient-primary flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full text-sm font-semibold transition-all active:scale-[0.98] relative z-10"
                 >
                   Book a Free Demo <ArrowRight size={16} />
                 </Link>
@@ -680,7 +689,7 @@ export default function Home() {
         <div className="relative z-10 container-app text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Ready to see ImCam Hub in action?
+              Ready to see ImCam Hub <span className="text-cyan-light">in action</span>?
             </h2>
             <p className="text-white/60 max-w-xl mx-auto mb-8">
               Join immigration practices that have transformed their workflow
@@ -688,7 +697,7 @@ export default function Home() {
             </p>
             <Link
               to="/book-demo"
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
             >
               Book a Free Demo <ArrowRight size={18} />
             </Link>

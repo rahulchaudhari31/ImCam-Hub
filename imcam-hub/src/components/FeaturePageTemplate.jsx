@@ -4,6 +4,16 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import FAQAccordion from './FAQAccordion';
 
+const featureColors = [
+  'bg-blue/10 text-blue',
+  'bg-indigo/10 text-indigo',
+  'bg-purple/10 text-purple',
+  'bg-emerald/10 text-emerald',
+  'bg-cyan/10 text-cyan',
+  'bg-orange/10 text-orange',
+  'bg-pink/10 text-pink',
+];
+
 function AnimateOnScroll({ children, className = '', delay = 0 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-60px' });
@@ -35,7 +45,6 @@ function KenBurnsBanner({ overlayText, overlaySubline, bannerColor }) {
         style={{ scale }}
         className={`absolute inset-0 ${bannerColor}`}
       >
-        {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
@@ -96,7 +105,7 @@ export default function FeaturePageTemplate({
           >
             <AnimateOnScroll>
               <div style={{ direction: 'ltr' }}>
-                <span className="inline-flex items-center px-4 py-1.5 bg-amber/10 text-amber-dark text-xs font-semibold rounded-full mb-5">
+                <span className="inline-flex items-center px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-5">
                   {roleName}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-5">
@@ -116,8 +125,8 @@ export default function FeaturePageTemplate({
               <div style={{ direction: 'ltr' }}>
                 <div className="bg-sand rounded-2xl border border-sand-dark aspect-[4/3] flex items-center justify-center">
                   <div className="text-center px-6">
-                    <div className="w-16 h-16 bg-navy/[0.06] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <div className="w-8 h-8 border-2 border-navy/20 rounded-lg" />
+                    <div className="w-16 h-16 bg-blue-pale rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <div className="w-8 h-8 border-2 border-blue/20 rounded-lg" />
                     </div>
                     <p className="text-sm font-medium text-text-muted">
                       {introImageLabel}
@@ -150,25 +159,28 @@ export default function FeaturePageTemplate({
                 rowIndex > 0 ? 'mt-6' : ''
               }`}
             >
-              {row.map((feature, i) => (
-                <AnimateOnScroll key={i} delay={i * 0.06}>
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-white rounded-2xl border border-sand-dark p-6 h-full hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-shadow"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-navy/[0.06] flex items-center justify-center mb-4">
-                      <feature.icon size={24} className="text-navy" />
-                    </div>
-                    <h3 className="text-base font-heading font-semibold text-navy mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-text-secondary leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </motion.div>
-                </AnimateOnScroll>
-              ))}
+              {row.map((feature, i) => {
+                const colorClass = featureColors[(rowIndex * 3 + i) % featureColors.length];
+                return (
+                  <AnimateOnScroll key={i} delay={i * 0.06}>
+                    <motion.div
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.2 }}
+                      className="bg-white rounded-2xl border border-sand-dark p-6 h-full hover:shadow-[0_8px_30px_rgba(11,31,58,0.08)] transition-shadow"
+                    >
+                      <div className={`w-12 h-12 rounded-2xl ${colorClass} flex items-center justify-center mb-4`}>
+                        <feature.icon size={24} />
+                      </div>
+                      <h3 className="text-base font-heading font-semibold text-navy mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-text-secondary leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </motion.div>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           ))}
         </div>
@@ -180,7 +192,7 @@ export default function FeaturePageTemplate({
           <div className="container-app max-w-3xl">
             <AnimateOnScroll className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy">
-                Frequently Asked Questions
+                Frequently Asked <span className="gradient-text-purple">Questions</span>
               </h2>
             </AnimateOnScroll>
 
@@ -194,11 +206,12 @@ export default function FeaturePageTemplate({
       )}
 
       {/* 5. Bottom CTA */}
-      <section className="py-20 bg-navy">
-        <div className="container-app text-center">
+      <section className="py-20 bg-navy relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy via-indigo/20 to-purple/10 pointer-events-none" />
+        <div className="container-app text-center relative z-10">
           <AnimateOnScroll>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              See this in action
+              See this <span className="text-cyan-light">in action</span>
             </h2>
             <p className="text-white/60 max-w-xl mx-auto mb-8">
               Book a personalized walkthrough of the{' '}
@@ -206,7 +219,7 @@ export default function FeaturePageTemplate({
             </p>
             <Link
               to="/book-demo"
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
             >
               Book a Free Demo <ArrowRight size={18} />
             </Link>

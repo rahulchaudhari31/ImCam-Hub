@@ -36,10 +36,10 @@ const categories = [
 ];
 
 const categoryColors = {
-  guides: { bg: 'bg-teal/10', text: 'text-teal-dark' },
-  'case-studies': { bg: 'bg-amber/10', text: 'text-amber-dark' },
-  product: { bg: 'bg-navy/[0.06]', text: 'text-navy' },
-  compliance: { bg: 'bg-[#E8D5D0]', text: 'text-[#9B4D4D]' },
+  guides: { bg: 'bg-emerald/10', text: 'text-emerald' },
+  'case-studies': { bg: 'bg-amber/10', text: 'text-amber' },
+  product: { bg: 'bg-indigo/10', text: 'text-indigo' },
+  compliance: { bg: 'bg-pink/10', text: 'text-pink' },
 };
 
 const resources = [
@@ -153,11 +153,11 @@ export default function Resources() {
             transition={{ duration: 0.5 }}
             className="max-w-3xl mx-auto text-center mb-10"
           >
-            <span className="inline-flex items-center px-4 py-1.5 bg-navy/[0.06] text-navy text-xs font-semibold rounded-full mb-5">
+            <span className="inline-flex items-center px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-5">
               Resources
             </span>
             <h1 className="text-4xl sm:text-5xl font-heading font-bold text-navy mb-5 leading-tight">
-              Resources & Insights
+              Resources & <span className="gradient-text">Insights</span>
             </h1>
             <p className="text-lg text-text-secondary max-w-xl mx-auto">
               Guides, case studies, and product updates to help your
@@ -183,7 +183,7 @@ export default function Resources() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search resources..."
-                className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-sand-dark text-sm text-navy placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors"
+                className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-sand-dark text-sm text-navy placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-blue/40 focus:border-blue transition-colors"
               />
             </div>
 
@@ -195,8 +195,8 @@ export default function Resources() {
                   onClick={() => setActiveFilter(cat.key)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     activeFilter === cat.key
-                      ? 'bg-navy text-white shadow-md'
-                      : 'bg-white text-text-secondary border border-sand-dark hover:border-navy/20 hover:text-navy'
+                      ? 'bg-blue text-white shadow-md'
+                      : 'bg-white text-text-secondary border border-sand-dark hover:border-blue/30 hover:text-navy'
                   }`}
                 >
                   {cat.label}
@@ -222,7 +222,7 @@ export default function Resources() {
                   setActiveFilter('all');
                   setSearchQuery('');
                 }}
-                className="mt-4 text-amber font-semibold text-sm hover:underline"
+                className="mt-4 text-blue font-semibold text-sm hover:underline"
               >
                 Clear filters
               </button>
@@ -274,13 +274,13 @@ export default function Resources() {
                           {resource.readTime}
                         </span>
                       </div>
-                      <h3 className="text-base font-heading font-semibold text-navy mb-2 leading-snug group-hover:text-amber transition-colors">
+                      <h3 className="text-base font-heading font-semibold text-navy mb-2 leading-snug group-hover:text-blue transition-colors">
                         {resource.title}
                       </h3>
                       <p className="text-sm text-text-secondary leading-relaxed mb-4 line-clamp-2">
                         {resource.excerpt}
                       </p>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber group-hover:gap-2.5 transition-all">
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue group-hover:gap-2.5 transition-all">
                         Read more <ArrowRight size={14} />
                       </span>
                     </div>
@@ -301,7 +301,7 @@ export default function Resources() {
             <div className="bg-white rounded-2xl border border-sand-dark p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-xl font-heading font-semibold text-navy mb-2">
-                  Stay in the loop
+                  Stay in the <span className="gradient-text">loop</span>
                 </h3>
                 <p className="text-sm text-text-secondary">
                   Get new guides, compliance updates, and product announcements
@@ -310,7 +310,7 @@ export default function Resources() {
               </div>
               <div className="w-full md:w-auto">
                 {subscribed ? (
-                  <div className="flex items-center gap-2 text-teal font-semibold text-sm">
+                  <div className="flex items-center gap-2 text-emerald font-semibold text-sm">
                     <CheckCircle2 size={18} />
                     You&apos;re subscribed!
                   </div>
@@ -330,12 +330,12 @@ export default function Resources() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@company.com"
-                        className="w-full pl-10 pr-4 py-3 bg-sand rounded-xl border border-sand-dark text-sm text-navy placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-amber/40 focus:border-amber transition-colors"
+                        className="w-full pl-10 pr-4 py-3 bg-sand rounded-xl border border-sand-dark text-sm text-navy placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-blue/40 focus:border-blue transition-colors"
                       />
                     </div>
                     <button
                       type="submit"
-                      className="shrink-0 bg-amber hover:bg-amber-dark text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                      className="shrink-0 btn-gradient-primary px-6 py-3 rounded-xl text-sm font-semibold transition-all active:scale-[0.98]"
                     >
                       Subscribe
                     </button>
@@ -369,7 +369,7 @@ export default function Resources() {
             </p>
             <Link
               to="/book-demo"
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
             >
               Book a Free Demo <ArrowRight size={18} />
             </Link>
