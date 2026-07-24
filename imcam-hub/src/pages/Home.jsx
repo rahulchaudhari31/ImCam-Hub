@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import {
@@ -198,6 +198,159 @@ const faqs = [
   },
 ];
 
+function VideoShowcase() {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+    v.addEventListener('play', onPlay);
+    v.addEventListener('pause', onPause);
+    v.play().catch(() => setIsPlaying(false));
+    return () => {
+      v.removeEventListener('play', onPlay);
+      v.removeEventListener('pause', onPause);
+    };
+  }, []);
+
+  const highlights = [
+    { icon: FileCheck, stat: '10,000+', label: 'Cases Managed' },
+    { icon: Clock, stat: '60%', label: 'Faster Processing' },
+    { icon: Users, stat: '98%', label: 'Client Satisfaction' },
+    { icon: Shield, stat: '100%', label: 'Compliance Rate' },
+  ];
+
+  return (
+    <div className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background video */}
+      <video
+        ref={videoRef}
+        src="/assets/background-video.mp4"
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=1080&fit=crop"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-navy/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/20 to-transparent" />
+
+      {/* Content overlay */}
+      <div className="relative z-10 container-app py-20">
+        <div className="max-w-3xl">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 backdrop-blur-sm text-amber text-xs font-semibold rounded-full mb-6 border border-white/10"
+          >
+            <Play size={10} fill="currentColor" /> Platform Demo
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight"
+          >
+            See ImCam Hub{' '}
+            <span className="text-amber">in Action</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-white/70 max-w-xl mb-10 leading-relaxed"
+          >
+            Watch how our AI-powered platform streamlines immigration case
+            management — from client intake and document review through
+            compliance checks and final resolution.
+          </motion.p>
+
+          {/* Stats row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10"
+          >
+            {highlights.map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -3 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-colors"
+              >
+                <item.icon size={20} className="text-amber mb-2" />
+                <div className="text-2xl font-bold text-white">{item.stat}</div>
+                <div className="text-xs text-white/60">{item.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <Link
+              to="/book-demo"
+              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+            >
+              Book a Free Demo <ArrowRight size={18} />
+            </Link>
+            <Link
+              to="/features"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
+            >
+              Explore Features
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Play/pause button */}
+      <button
+        onClick={togglePlay}
+        className="absolute bottom-8 right-8 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-colors"
+      >
+        {isPlaying ? (
+          <div className="flex gap-1.5">
+            <div className="w-1.5 h-4 bg-white rounded-full" />
+            <div className="w-1.5 h-4 bg-white rounded-full" />
+          </div>
+        ) : (
+          <Play size={20} className="text-white ml-0.5" fill="white" />
+        )}
+      </button>
+    </div>
+  );
+}
+
 export default function Home() {
   usePageMeta(
     'Immigration Case Management Platform',
@@ -210,44 +363,9 @@ export default function Home() {
   return (
     <div>
       {/* =========================================
-          VIDEO SHOWCASE
+          VIDEO SHOWCASE — Full Background
           ========================================= */}
-      <section className="bg-navy">
-        <div className="container-app py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-              See ImCam Hub <span className="text-amber">in Action</span>
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Watch how our platform streamlines immigration case management from intake to resolution.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative rounded-2xl overflow-hidden shadow-[0_16px_60px_rgba(0,0,0,0.5)] border border-white/10"
-          >
-            <video
-              src="/assets/demo-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1280&h=720&fit=crop"
-              className="w-full h-auto object-cover aspect-video"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
-          </motion.div>
-        </div>
-      </section>
+      <VideoShowcase />
 
       {/* =========================================
           HERO SECTION — Light Background + Image
