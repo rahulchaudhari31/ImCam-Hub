@@ -46,6 +46,7 @@ const challenges = [
     description:
       'Spreadsheets, shared drives, and sticky notes create a fragmented view of your caseload — making it impossible to see which matters are on track and which are at risk.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
+    color: 'bg-rose/10 text-rose',
   },
   {
     icon: Clock,
@@ -53,6 +54,7 @@ const challenges = [
     description:
       'Filing windows, interview dates, and renewal deadlines are tracked in emails and calendars with no automated safety net — one missed date can mean a rejected application.',
     image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&h=400&fit=crop',
+    color: 'bg-orange/10 text-orange',
   },
   {
     icon: Users,
@@ -60,6 +62,7 @@ const challenges = [
     description:
       'Requests, documents, and updates are scattered across email threads, phone calls, and messaging apps — caseworkers waste hours reconstructing conversation history.',
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=400&fit=crop',
+    color: 'bg-pink/10 text-pink',
   },
   {
     icon: ShieldAlert,
@@ -67,6 +70,7 @@ const challenges = [
     description:
       'Regulatory requirements change frequently and vary by jurisdiction. Without automated checks, firms risk filing errors, data breaches, and audit failures.',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop',
+    color: 'bg-red-500/10 text-red-500',
   },
 ];
 
@@ -76,48 +80,56 @@ const solutions = [
     title: 'AI Chat',
     description:
       'Context-aware chatbot that answers candidate questions, drafts preliminary responses, and routes complex queries to the right caseworker.',
+    color: 'bg-indigo/15 text-indigo-light',
   },
   {
     icon: FileSignature,
     title: 'AI Contracts',
     description:
       'Generate retainer agreements, engagement letters, and service contracts from templates — auto-populated with client data and case specifics.',
+    color: 'bg-blue/15 text-blue-light',
   },
   {
     icon: Mail,
     title: 'AI Emails',
     description:
       'Draft and refine client-facing emails using case context. Tone-calibrated, brand-consistent, and ready for one-click send or minor edits.',
+    color: 'bg-purple/15 text-purple-light',
   },
   {
     icon: FileText,
     title: 'AI Templates',
     description:
       'A library of intelligent templates for cover letters, submission packages, and government correspondence that adapt to each case\'s details.',
+    color: 'bg-emerald/15 text-emerald-light',
   },
   {
     icon: Mic,
     title: 'Speech to Text',
     description:
       'Dictate case notes, meeting summaries, and client instructions directly into the platform — transcribed and tagged to the correct matter.',
+    color: 'bg-cyan/15 text-cyan-light',
   },
   {
     icon: Volume2,
     title: 'Text to Speech',
     description:
       'Listen to case summaries, deadline lists, and document checklists on the go — accessibility-first for caseworkers who need to multitask.',
+    color: 'bg-orange/15 text-orange-light',
   },
   {
     icon: Rss,
     title: 'Firm Feed',
     description:
       'A unified activity stream showing case updates, team actions, new filings, and compliance alerts — keeps everyone aligned without status meetings.',
+    color: 'bg-pink/15 text-pink-light',
   },
   {
     icon: LayoutDashboard,
     title: 'User Dashboard',
     description:
       'Personalized dashboards for every role — showing relevant cases, upcoming deadlines, pending tasks, and performance metrics at a glance.',
+    color: 'bg-indigo/15 text-indigo-light',
   },
 ];
 
@@ -128,6 +140,7 @@ const steps = [
     description:
       'Import your existing cases, client data, and templates. We handle migration so your team starts on day one with everything in place.',
     icon: Link2,
+    color: 'bg-blue/10 text-blue',
   },
   {
     number: '02',
@@ -135,6 +148,7 @@ const steps = [
     description:
       'Configure AI agents, workflow rules, and compliance checks to match your firm\'s processes — then watch repetitive tasks disappear.',
     icon: Bot,
+    color: 'bg-indigo/10 text-indigo',
   },
   {
     number: '03',
@@ -142,6 +156,7 @@ const steps = [
     description:
       'Monitor every case, deadline, and team performance in real time. Dashboards and alerts keep your practice running smoothly.',
     icon: BarChart3,
+    color: 'bg-emerald/10 text-emerald',
   },
 ];
 
@@ -166,7 +181,7 @@ export default function Solutions() {
   return (
     <div>
       {/* =========================================
-          1. HERO
+          1. HERO — Enhanced
           ========================================= */}
       <section className="relative section-padding overflow-hidden">
         <img
@@ -175,24 +190,65 @@ export default function Solutions() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-navy/75" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-indigo/80" />
+        {/* Decorative glows */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue/15 rounded-full blur-[100px] pointer-events-none" />
+
         <div className="relative z-10 container-app">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-3xl mx-auto text-center"
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl sm:text-5xl font-heading font-bold text-white mb-6 leading-tight">
-              The Challenges Immigration
-              <br className="hidden sm:block" /> Practices Face
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full mb-8"
+            >
+              <span className="w-2 h-2 rounded-full bg-rose animate-pulse" />
+              <span className="text-xs font-semibold text-white/80 tracking-wide uppercase">The Problem</span>
+            </motion.div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1]">
+              The Challenges Immigration{' '}
+              <br className="hidden sm:block" />
+              Practices <span className="gradient-text-cyan">Face</span>
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Immigration practices juggle complex regulations, tight
-              deadlines, and high client expectations — all with lean teams
-              and fragmented tools. ImCam Hub was built to solve every one
-              of these challenges.
+
+            <p className="text-lg sm:text-xl text-white/60 max-w-3xl mx-auto mb-10 leading-relaxed">
+              Complex regulations. Tight deadlines. High client expectations.
+              Lean teams. Fragmented tools. ImCam Hub was built to solve{' '}
+              <span className="text-white font-medium">every one</span> of these challenges.
             </p>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+            >
+              {[
+                { value: '73%', label: 'of firms use spreadsheets', color: 'text-rose' },
+                { value: '40%', label: 'cases miss deadlines', color: 'text-orange' },
+                { value: '6hrs', label: 'wasted daily on admin', color: 'text-amber' },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + i * 0.1 }}
+                  className="text-center"
+                >
+                  <div className={`text-3xl sm:text-4xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
+                  <div className="text-xs text-white/50 font-medium tracking-wide">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -225,8 +281,8 @@ export default function Solutions() {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#E8D5D0] flex items-center justify-center mb-4">
-                      <challenge.icon size={24} className="text-[#9B4D4D]" />
+                    <div className={`w-12 h-12 rounded-2xl ${challenge.color} flex items-center justify-center mb-4`}>
+                      <challenge.icon size={24} />
                     </div>
                     <h3 className="text-base font-heading font-semibold text-[#4A3B3B] mb-2">
                       {challenge.title}
@@ -245,14 +301,15 @@ export default function Solutions() {
       {/* =========================================
           3. OUR SOLUTIONS — 8 AI Tiles
           ========================================= */}
-      <section className="section-padding bg-navy">
-        <div className="container-app">
+      <section className="section-padding bg-navy relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy via-indigo/20 to-purple/10 pointer-events-none" />
+        <div className="container-app relative z-10">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="inline-flex items-center px-4 py-1.5 bg-amber/15 text-amber text-xs font-semibold rounded-full mb-5">
+            <span className="inline-flex items-center px-4 py-1.5 bg-blue/20 text-blue-lighter text-xs font-semibold rounded-full mb-5">
               Powered by AI
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Our Solutions
+              Our <span className="gradient-text-cyan">Solutions</span>
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto">
               Eight intelligent capabilities that eliminate manual work,
@@ -273,10 +330,10 @@ export default function Solutions() {
                 variants={staggerItem}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 hover:border-amber/30 rounded-2xl p-6 cursor-default transition-colors group"
+                className="bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 rounded-2xl p-6 cursor-default transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-amber/10 group-hover:bg-amber/20 flex items-center justify-center mb-4 transition-colors">
-                  <sol.icon size={24} className="text-amber" />
+                <div className={`w-12 h-12 rounded-2xl ${sol.color} flex items-center justify-center mb-4 transition-colors`}>
+                  <sol.icon size={24} />
                 </div>
                 <h3 className="text-base font-heading font-semibold text-white mb-2">
                   {sol.title}
@@ -297,7 +354,7 @@ export default function Solutions() {
         <div className="container-app">
           <AnimateOnScroll className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              How It Works
+              How It <span className="gradient-text">Works</span>
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
               Three steps from signup to a fully operational immigration
@@ -314,7 +371,7 @@ export default function Solutions() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.5, ease: 'easeInOut' }}
-                  className="absolute inset-0 bg-amber origin-left"
+                  className="absolute inset-0 bg-gradient-to-r from-blue via-indigo to-emerald origin-left"
                 />
               </div>
             </div>
@@ -341,7 +398,7 @@ export default function Solutions() {
                           whileInView={{ scaleY: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.4, delay: 0.3 + i * 0.2 }}
-                          className="w-full h-full bg-amber origin-top"
+                          className="w-full h-full bg-gradient-to-b from-blue to-indigo origin-top"
                         />
                       </div>
                     </div>
@@ -374,7 +431,7 @@ export default function Solutions() {
         <div className="relative z-10 container-app text-center">
           <AnimateOnScroll>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-              Ready to see ImCam Hub in action?
+              Ready to see ImCam Hub <span className="text-cyan-light">in action</span>?
             </h2>
             <p className="text-white/60 max-w-xl mx-auto mb-8">
               Join immigration practices that have transformed their workflow
@@ -382,7 +439,7 @@ export default function Solutions() {
             </p>
             <Link
               to="/book-demo"
-              className="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-[0_2px_8px_rgba(242,153,74,0.35)] hover:shadow-[0_4px_16px_rgba(242,153,74,0.4)] hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-[0.98]"
             >
               Book a Free Demo <ArrowRight size={18} />
             </Link>

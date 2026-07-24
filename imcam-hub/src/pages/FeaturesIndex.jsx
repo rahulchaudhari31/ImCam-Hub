@@ -2,8 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, LayoutDashboard, Users, UserCheck, Building2 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
-import Button from '../components/Button';
-import Badge from '../components/Badge';
 import Card from '../components/Card';
 
 const roles = [
@@ -12,32 +10,36 @@ const roles = [
     title: 'Admin Dashboard',
     path: '/features/admin',
     description: 'Complete oversight of all immigration operations with powerful analytics and reporting.',
-    color: 'bg-amber/10 text-amber',
+    color: 'bg-indigo/10 text-indigo',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+    gradient: 'from-indigo-pale/40 to-transparent',
   },
   {
     icon: Users,
     title: 'Caseworker Portal',
     path: '/features/caseworker',
     description: 'Streamlined case management with AI-assisted workflows and automated document handling.',
-    color: 'bg-teal/10 text-teal',
+    color: 'bg-emerald/10 text-emerald',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=500&fit=crop',
+    gradient: 'from-emerald-pale/40 to-transparent',
   },
   {
     icon: UserCheck,
     title: 'Candidate Portal',
     path: '/features/candidate',
     description: 'Self-service portal for candidates to track their immigration journey in real-time.',
-    color: 'bg-navy/10 text-navy',
+    color: 'bg-blue/10 text-blue',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=500&fit=crop',
+    gradient: 'from-blue-pale/40 to-transparent',
   },
   {
     icon: Building2,
     title: 'Client Portal',
     path: '/features/client',
     description: 'High-level dashboards and reporting for organizational clients managing multiple cases.',
-    color: 'bg-amber/10 text-amber',
+    color: 'bg-purple/10 text-purple',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
+    gradient: 'from-purple-pale/40 to-transparent',
   },
 ];
 
@@ -59,7 +61,7 @@ export default function FeaturesIndex() {
             >
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-heading font-bold text-navy leading-[1.1] mb-6">
                 Features Built for{' '}
-                <span className="text-amber">Every Stakeholder</span>
+                <span className="gradient-text">Every Stakeholder</span>
               </h1>
               <p className="text-lg text-text-secondary leading-relaxed mb-4 max-w-lg">
                 Discover how ImCam Hub tailors the immigration management
@@ -101,24 +103,25 @@ export default function FeaturesIndex() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Link to={role.path}>
-                  <Card className="h-full group cursor-pointer overflow-hidden !p-0">
-                    <div className="aspect-[16/9] overflow-hidden">
+                  <Card variant="premium" className="h-full group cursor-pointer overflow-hidden !p-0">
+                    <div className="aspect-[16/9] overflow-hidden relative">
                       <img
                         src={role.image}
                         alt={role.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${role.gradient} opacity-60`} />
                     </div>
                     <div className="p-6">
-                      <div className={`w-14 h-14 ${role.color} rounded-xl flex items-center justify-center mb-4`}>
+                      <div className={`w-14 h-14 ${role.color} rounded-2xl flex items-center justify-center mb-4`}>
                         <role.icon size={28} />
                       </div>
-                      <h3 className="text-xl font-heading font-semibold text-navy mb-3 group-hover:text-amber transition-colors">
+                      <h3 className="text-xl font-heading font-semibold text-navy mb-3 group-hover:text-blue transition-colors">
                         {role.title}
                       </h3>
                       <p className="text-text-secondary mb-4">{role.description}</p>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-amber group-hover:gap-3 transition-all">
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-blue group-hover:gap-3 transition-all">
                         Explore <ArrowRight size={16} />
                       </span>
                     </div>
@@ -140,14 +143,18 @@ export default function FeaturesIndex() {
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 container-app text-center">
           <h2 className="text-3xl font-heading font-bold text-white mb-4">
-            See All Features in Action
+            See All Features <span className="text-cyan-light">in Action</span>
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto mb-8">
             Schedule a personalized demo to explore how each portal can transform your workflow.
           </p>
-          <Button to="/book-demo" size="lg">
-            Book a Demo <ArrowRight size={18} />
-          </Button>
+          <Link
+            to="/book-demo"
+            className="inline-flex items-center justify-center gap-3 btn-gradient-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+          >
+            Book a Demo
+            <ArrowRight size={16} className="mt-px" />
+          </Link>
         </div>
       </section>
     </div>
