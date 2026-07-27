@@ -92,7 +92,7 @@ export default function Navbar() {
         }`}
       >
         <div className="container-app">
-          <div className="flex items-center justify-between h-[72px]">
+          <div className="flex items-center justify-between h-[80px] sm:h-[88px]">
             {/* Left: Logo */}
             <Link
               to="/"
@@ -102,7 +102,7 @@ export default function Navbar() {
               <img
                 src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
                 alt="ImCam Hub"
-                className="h-12 sm:h-14 w-auto object-contain"
+                className="h-16 sm:h-[72px] w-auto object-contain"
               />
             </Link>
 
@@ -215,7 +215,7 @@ export default function Navbar() {
       </nav>
 
       {/* Spacer to prevent content from hiding behind fixed nav */}
-      <div className="h-[72px]" />
+      <div className="h-[80px] sm:h-[88px]" />
 
       {/* Mobile: Slide-in drawer overlay */}
       <AnimatePresence>
@@ -241,7 +241,7 @@ export default function Navbar() {
             >
               <div className="flex flex-col h-full">
                 {/* Drawer header */}
-                <div className="flex items-center justify-between px-5 h-[72px] border-b border-sand-dark shrink-0">
+                <div className="flex items-center justify-between px-5 h-[80px] border-b border-sand-dark shrink-0">
                   <Link
                     to="/"
                     onClick={() => setMobileOpen(false)}
@@ -250,7 +250,7 @@ export default function Navbar() {
                     <img
                       src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
                       alt="ImCam Hub"
-                      className="h-9 w-auto object-contain"
+                      className="h-12 w-auto object-contain"
                     />
                   </Link>
                   <button
