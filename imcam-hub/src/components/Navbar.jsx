@@ -10,7 +10,7 @@ import {
   UserCheck,
   Building2,
 } from 'lucide-react';
-import Logo from './Logo';
+
 
 const featureItems = [
   {
@@ -99,7 +99,11 @@ export default function Navbar() {
               className="flex items-center shrink-0"
               aria-label="ImCam Hub home"
             >
-              <Logo variant="full" className="h-8 sm:h-9 w-auto" />
+              <img
+                src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
+                alt="ImCam Hub"
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
             </Link>
 
             {/* Center: Desktop nav links */}
@@ -243,7 +247,11 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className="flex items-center"
                   >
-                    <Logo variant="full" className="h-7 w-auto" />
+                    <img
+                      src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
+                      alt="ImCam Hub"
+                      className="h-9 w-auto object-contain"
+                    />
                   </Link>
                   <button
                     onClick={() => setMobileOpen(false)}
