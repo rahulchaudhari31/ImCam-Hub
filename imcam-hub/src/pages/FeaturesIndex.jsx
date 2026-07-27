@@ -18,7 +18,7 @@ const roles = [
     icon: Users,
     title: 'Caseworker Portal',
     path: '/features/caseworker',
-    description: 'Streamlined case management with AI-assisted workflows and automated document handling.',
+    description: 'Streamlined case management with automated workflows and document handling.',
     color: 'bg-emerald/10 text-emerald',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=500&fit=crop',
     gradient: 'from-emerald-pale/40 to-transparent',
@@ -46,7 +46,7 @@ const roles = [
 export default function FeaturesIndex() {
   usePageMeta(
     'Features — ImCam Hub',
-    'Explore the complete ImCam Hub feature set: admin dashboards, caseworker portals, candidate portals, and client portals — all powered by AI.'
+    'Explore the complete ImCam Hub feature set: admin dashboards, caseworker portals, candidate portals, and client portals — all powered by smart automation.'
   );
 
   return (

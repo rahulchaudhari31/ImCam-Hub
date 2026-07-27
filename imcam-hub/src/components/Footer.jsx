@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
-import Logo from './Logo';
 
 const productLinks = [
   { name: 'Admin Dashboard', path: '/features/admin' },
@@ -37,10 +36,14 @@ export default function Footer() {
             {/* Column 1: Logo + tagline + social */}
             <div className="lg:col-span-4">
               <Link to="/" className="inline-flex items-center mb-4" aria-label="ImCam Hub home">
-                <Logo variant="full" className="h-8 w-auto" />
+                <img
+                  src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
+                  alt="ImCam Hub"
+                  className="h-12 w-auto object-contain"
+                />
               </Link>
               <p className="text-white/50 text-sm tracking-wide leading-relaxed mb-5 max-w-[280px]">
-                Structured case management. Powered by AI.
+                Structured case management. Powered by smart automation.
               </p>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (

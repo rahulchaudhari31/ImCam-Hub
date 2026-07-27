@@ -26,7 +26,7 @@ const featureItems = [
     name: 'Caseworker Portal',
     path: '/features/caseworker',
     icon: Users,
-    description: 'Matter management & AI drafting',
+    description: 'Matter management & smart drafting',
     iconBg: 'bg-blue/10',
     iconHover: 'group-hover:bg-blue/20',
     textColor: 'text-blue',
