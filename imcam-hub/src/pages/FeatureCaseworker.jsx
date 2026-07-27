@@ -30,7 +30,7 @@ const features = [
   },
   {
     icon: PenTool,
-    title: 'AI-Assisted Drafting',
+    title: 'Smart Drafting',
     description:
       'Generate first drafts of cover letters, submission packages, and client correspondence using case context and pre-approved templates — edit and send in minutes.',
   },
@@ -55,9 +55,9 @@ const faqs = [
       'When a caseworker creates a new matter, the system automatically generates a checklist based on the case type (e.g., LMIA, Express Entry, Work Permit), the jurisdiction, and the current filing stage. Checklists update dynamically as the case progresses.',
   },
   {
-    question: 'Can I customize the AI drafting templates?',
+    question: 'Can I customize the drafting templates?',
     answer:
-      'Absolutely. You can create, edit, and version your own templates. The AI drafts using your firm\'s language and tone, pulling in case-specific data automatically. Every draft is editable before sending.',
+      'Absolutely. You can create, edit, and version your own templates. The system drafts using your firm\'s language and tone, pulling in case-specific data automatically. Every draft is editable before sending.',
   },
   {
     question: 'Does workload balancing work across offices?',
@@ -69,7 +69,7 @@ const faqs = [
 export default function FeatureCaseworker() {
   usePageMeta(
     'Caseworker Portal — ImCam Hub',
-    'Streamlined case management with AI-assisted workflows, automated checklists, and deadline tracking for immigration caseworkers.'
+    'Streamlined case management with automated workflows, automated checklists, and deadline tracking for immigration caseworkers.'
   );
 
   return (
@@ -77,12 +77,12 @@ export default function FeatureCaseworker() {
       title="Caseworker Portal"
       roleName="Caseworker"
       bannerText="Built for Caseworkers"
-      bannerSubline="Manage your matters faster with AI-assisted workflows, automated checklists, and deadline tracking that never lets anything slip."
+      bannerSubline="Manage your matters faster with automated workflows, automated checklists, and deadline tracking that never lets anything slip."
       bannerColor="bg-teal"
       introHeading="Work smarter on every matter."
       introText={[
         'Caseworkers juggle dozens of active matters at any given time, each with unique deadlines, document requirements, and client expectations. The margin for error is zero.',
-        'The Caseworker Portal is designed around your actual workflow — from matter intake to final filing. Automate repetitive steps, let AI handle first drafts, and never miss a deadline with intelligent tracking built into every case.',
+        'The Caseworker Portal is designed around your actual workflow — from matter intake to final filing. Automate repetitive steps, handle first drafts efficiently, and never miss a deadline with intelligent tracking built into every case.',
       ]}
       introImageLabel="Caseworker Portal Preview"
       introReverse

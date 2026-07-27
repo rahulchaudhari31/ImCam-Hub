@@ -91,7 +91,7 @@ const aiAgents = [
     title: 'Email Reply Agent',
     description:
       'Drafts context-aware responses to client and government correspondence using case history, templates, and tone calibration — ready for one-click send.',
-    badges: ['AI DRAFTED', 'BRAND TONE'],
+    badges: ['AUTO DRAFTED', 'BRAND TONE'],
     color: 'bg-purple/10 text-purple',
   },
   {
@@ -133,7 +133,7 @@ const coreModules = [
   {
     icon: Users,
     title: 'Caseworker Portal',
-    description: 'Matter management, document checklists, deadline tracking, AI-assisted drafting, and workload balancing.',
+    description: 'Matter management, document checklists, deadline tracking, automated drafting, and workload balancing.',
     path: '/features/caseworker',
     color: 'bg-emerald/10',
     iconColor: 'text-emerald',
@@ -190,7 +190,7 @@ const faqs = [
       'ImCam Hub supports the full spectrum of immigration case types including work permits, permanent residency applications, family sponsorships, refugee claims, and corporate immigration programs. The platform is jurisdiction-aware and adapts its checklists and compliance rules based on the country and program type.',
   },
   {
-    question: 'How does the AI document verification work?',
+    question: 'How does the document verification work?',
     answer:
       'Our Document Verification Agent uses OCR and NLP to scan uploaded files in real time. It checks for expired documents, missing signatures, incorrect formats, and incomplete fields — flagging issues before a caseworker even opens the file. This reduces rejection rates and accelerates processing.',
   },
@@ -301,7 +301,7 @@ function VideoShowcase() {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/70 max-w-xl mb-10 leading-relaxed"
           >
-            Watch how our <span className="text-cyan-light font-medium">AI Powered</span> platform streamlines{' '}
+            Watch how our <span className="text-cyan-light font-medium">smart</span> platform streamlines{' '}
             <span className="text-cyan-light font-medium">immigration</span>{' '}
             <span className="text-cyan-light font-medium">case management</span> — from client intake and{' '}
             <span className="text-cyan-light font-medium">document</span> review through
@@ -374,7 +374,7 @@ function VideoShowcase() {
 export default function Home() {
   usePageMeta(
     'Immigration Case Management Platform',
-    'ImCam Hub is the AI-powered case management system for immigration practices. Manage intake, documents, compliance, and invoicing in one platform.'
+    'ImCam Hub is the case management system for immigration practices. Manage intake, documents, compliance, and invoicing in one platform.'
   );
 
   const heroRef = useRef(null);
@@ -407,7 +407,7 @@ export default function Home() {
                 <span className="gradient-text">Handled.</span>
               </h1>
               <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
-                ImCam Hub is the <span className="text-accent-blue font-medium">AI Powered</span>{' '}
+                ImCam Hub is the <span className="text-accent-blue font-medium">smart</span>{' '}
                 <span className="text-accent-blue font-medium">case management</span> system built for{' '}
                 <span className="text-accent-blue font-medium">immigration</span> practices. From client intake through final
                 resolution — intake, <span className="text-accent-blue font-medium">document</span> review, compliance checks, and
@@ -461,17 +461,17 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          AI SYSTEM — 6-Tile Grid
+          INTELLIGENT SYSTEM — 6-Tile Grid
           ========================================= */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-soft via-white to-indigo-pale/30 pointer-events-none" />
         <div className="container-app relative z-10">
           <AnimatedSection className="text-center mb-14">
             <span className="inline-flex items-center px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-4">
-              AI Powered
+              Smart Automation
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
-              One AI System. Every Case <span className="gradient-text">Handled.</span>
+              One System. Every Case <span className="gradient-text">Handled.</span>
             </h2>
             <p className="text-text-secondary max-w-2xl mx-auto">
               Five intelligent agents work behind the scenes to automate

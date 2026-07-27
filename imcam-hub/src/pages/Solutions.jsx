@@ -145,7 +145,7 @@ const steps = [
     number: '02',
     title: 'Automate',
     description:
-      'Configure AI agents, workflow rules, and compliance checks to match your firm\'s processes — then watch repetitive tasks disappear.',
+      'Configure smart agents, workflow rules, and compliance checks to match your firm\'s processes — then watch repetitive tasks disappear.',
     icon: Bot,
     color: 'bg-indigo/10 text-indigo',
   },
@@ -298,7 +298,7 @@ export default function Solutions() {
       </section>
 
       {/* =========================================
-          3. OUR SOLUTIONS — 8 AI Tiles
+          3. OUR SOLUTIONS — 8 Tiles
           ========================================= */}
       <section className="section-padding bg-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-indigo/20 to-purple/10 pointer-events-none" />

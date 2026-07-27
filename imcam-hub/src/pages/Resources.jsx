@@ -44,9 +44,9 @@ const categoryColors = {
 
 const resources = [
   {
-    title: 'How AI Is Resolving LMIA Processing Bottlenecks in 2026',
+    title: 'How Automation Is Resolving LMIA Processing Bottlenecks in 2026',
     excerpt:
-      'Labour Market Impact Assessment timelines have stretched to record highs. Here\'s how forward-thinking firms are using AI automation to cut turnaround by 40%.',
+      'Labour Market Impact Assessment timelines have stretched to record highs. Here\'s how forward-thinking firms are using smart automation to cut turnaround by 40%.',
     category: 'guides',
     readTime: '7 min read',
     date: 'Jul 15, 2026',
@@ -71,9 +71,9 @@ const resources = [
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=500&fit=crop',
   },
   {
-    title: 'Introducing AI Contract Drafting: Generate Retainers in Seconds',
+    title: 'Introducing Smart Contract Drafting: Generate Retainers in Seconds',
     excerpt:
-      'Our latest product release adds AI-powered contract generation — pull client data into pre-approved templates and produce polished retainer agreements instantly.',
+      'Our latest product release adds smart contract generation — pull client data into pre-approved templates and produce polished retainer agreements instantly.',
     category: 'product',
     readTime: '3 min read',
     date: 'Jun 24, 2026',
