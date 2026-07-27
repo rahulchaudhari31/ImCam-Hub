@@ -66,7 +66,7 @@ function FormField({ label, name, required, error, children }) {
 export default function BookDemo() {
   usePageMeta(
     'Book a Free Demo',
-    'Schedule a personalized walkthrough of ImCam Hub. See how our AI-powered platform transforms immigration case management for your practice.'
+    'Schedule a personalized walkthrough of ImCam Hub. See how our platform transforms immigration case management for your practice.'
   );
 
   const [submitted, setSubmitted] = useState(false);

@@ -1,0 +1,24 @@
+{
+  "name": "Incam Hub",
+  "short_name": "Incam Hub",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#0B1F3A",
+  "background_color": "#0B1F3A",
+  "display": "standalone"
+}
