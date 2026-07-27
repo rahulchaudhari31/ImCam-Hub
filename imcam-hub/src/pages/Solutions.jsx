@@ -4,10 +4,10 @@ import { motion, useInView } from 'framer-motion';
 import usePageMeta from '../hooks/usePageMeta';
 import {
   ArrowRight,
-  MessageSquareText,
-  FileSignature,
-  Mail,
-  FileText,
+  Database,
+  Calendar,
+  Globe,
+  PieChart,
   Mic,
   Volume2,
   Rss,
@@ -19,7 +19,6 @@ import {
   Link2,
   Bot,
   BarChart3,
-  CheckCircle2,
 } from 'lucide-react';
 
 function AnimateOnScroll({ children, className = '', delay = 0 }) {
@@ -76,31 +75,31 @@ const challenges = [
 
 const solutions = [
   {
-    icon: MessageSquareText,
-    title: 'AI Chat',
+    icon: Database,
+    title: 'Document Vault',
     description:
-      'Context-aware chatbot that answers candidate questions, drafts preliminary responses, and routes complex queries to the right caseworker.',
+      'Securely store, organise, and retrieve all case-related documents in one centralised repository with version control and access permissions.',
     color: 'bg-indigo/15 text-indigo-light',
   },
   {
-    icon: FileSignature,
-    title: 'AI Contracts',
+    icon: Calendar,
+    title: 'Deadline Tracker',
     description:
-      'Generate retainer agreements, engagement letters, and service contracts from templates — auto-populated with client data and case specifics.',
+      'Automated calendar syncing with smart alerts for filing windows, interview dates, and renewal deadlines — never miss a critical date again.',
     color: 'bg-blue/15 text-blue-light',
   },
   {
-    icon: Mail,
-    title: 'AI Emails',
+    icon: Globe,
+    title: 'Client Portal',
     description:
-      'Draft and refine client-facing emails using case context. Tone-calibrated, brand-consistent, and ready for one-click send or minor edits.',
+      'Give clients a self-service dashboard to upload documents, track case progress, and communicate with their caseworker — reducing back-and-forth.',
     color: 'bg-purple/15 text-purple-light',
   },
   {
-    icon: FileText,
-    title: 'AI Templates',
+    icon: PieChart,
+    title: 'Reporting & Analytics',
     description:
-      'A library of intelligent templates for cover letters, submission packages, and government correspondence that adapt to each case\'s details.',
+      'Real-time dashboards and custom reports on caseload health, team performance, revenue metrics, and compliance scores across your firm.',
     color: 'bg-emerald/15 text-emerald-light',
   },
   {
@@ -175,7 +174,7 @@ const staggerItem = {
 export default function Solutions() {
   usePageMeta(
     'Solutions — ImCam Hub',
-    'AI-powered solutions for immigration practices: automated document drafting, compliance monitoring, deadline tracking, and intelligent case routing.'
+    'Comprehensive solutions for immigration practices: document management, deadline tracking, client portals, and intelligent case routing.'
   );
 
   return (
@@ -305,14 +304,11 @@ export default function Solutions() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-indigo/20 to-purple/10 pointer-events-none" />
         <div className="container-app relative z-10">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="inline-flex items-center px-4 py-1.5 bg-blue/20 text-blue-lighter text-xs font-semibold rounded-full mb-5">
-              Powered by AI
-            </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
               Our <span className="gradient-text-cyan">Solutions</span>
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Eight intelligent capabilities that eliminate manual work,
+              Eight powerful capabilities that eliminate manual work,
               reduce risk, and keep your caseload moving automatically.
             </p>
           </AnimateOnScroll>
