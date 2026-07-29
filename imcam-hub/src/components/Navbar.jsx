@@ -100,9 +100,9 @@ export default function Navbar() {
               aria-label="ImCam Hub home"
             >
               <img
-                src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
+                src="/assets/imcam%20hub%20logo%201%20cropped.png"
                 alt="ImCam Hub"
-                className="h-16 sm:h-[72px] w-auto object-contain"
+                className="h-12 sm:h-14 w-auto"
               />
             </Link>
 
@@ -248,9 +248,9 @@ export default function Navbar() {
                     className="flex items-center"
                   >
                     <img
-                      src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
+                      src="/assets/imcam%20hub%20logo%201%20cropped.png"
                       alt="ImCam Hub"
-                      className="h-12 w-auto object-contain"
+                      className="h-10 w-auto"
                     />
                   </Link>
                   <button

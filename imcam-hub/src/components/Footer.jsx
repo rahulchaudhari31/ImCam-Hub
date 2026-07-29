@@ -35,14 +35,16 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
             {/* Column 1: Logo + tagline + social */}
             <div className="lg:col-span-4">
-              <Link to="/" className="inline-flex items-center mb-4" aria-label="ImCam Hub home">
-                <img
-                  src="/assets/ImCamHub_logo%20JPG%20(1).jpg.jpeg"
-                  alt="ImCam Hub"
-                  className="h-12 w-auto object-contain"
-                />
+              <Link to="/" className="inline-flex mb-4" aria-label="ImCam Hub home">
+                <div className="bg-white p-3">
+                  <img
+                    src="/assets/imcam%20hub%20logo%201%20cropped.png"
+                    alt="ImCam Hub"
+                    className="h-12 w-auto"
+                  />
+                </div>
               </Link>
-              <p className="text-white/50 text-sm tracking-wide leading-relaxed mb-5 max-w-[280px]">
+              <p className="text-white/80 text-sm tracking-wide leading-relaxed mb-5 max-w-[280px]">
                 Structured case management. Powered by smart automation.
               </p>
               <div className="flex items-center gap-3">
