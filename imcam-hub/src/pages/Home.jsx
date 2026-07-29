@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import demoVideo from '../assets/video/gettyimages-2183092187-640_adpp.mp4';
@@ -218,32 +218,11 @@ const faqs = [
 
 function VideoShowcase() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const togglePlay = useCallback(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-      setIsPlaying(true);
-    } else {
-      v.pause();
-      setIsPlaying(false);
-    }
-  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const onPlay = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
-    v.addEventListener('play', onPlay);
-    v.addEventListener('pause', onPause);
-    v.play().catch(() => setIsPlaying(false));
-    return () => {
-      v.removeEventListener('play', onPlay);
-      v.removeEventListener('pause', onPause);
-    };
+    v.play();
   }, []);
 
   const highlights = [
@@ -353,20 +332,6 @@ function VideoShowcase() {
         </div>
       </div>
 
-      {/* Play/pause button */}
-      <button
-        onClick={togglePlay}
-        className="absolute bottom-8 right-8 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-colors"
-      >
-        {isPlaying ? (
-          <div className="flex gap-1.5">
-            <div className="w-1.5 h-4 bg-white rounded-full" />
-            <div className="w-1.5 h-4 bg-white rounded-full" />
-          </div>
-        ) : (
-          <Play size={20} className="text-white ml-0.5" fill="white" />
-        )}
-      </button>
     </div>
   );
 }
