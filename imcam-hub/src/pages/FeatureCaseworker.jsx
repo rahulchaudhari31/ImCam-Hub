@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
 import FeaturePageTemplate from '../components/FeaturePageTemplate';
+import bannerImg from '../assets/images/features/Caseworker_banner.jpeg';
+import introImg from '../assets/images/features/Caseworker_dashboard.png';
 
 const features = [
   {
@@ -86,6 +88,8 @@ export default function FeatureCaseworker() {
       ]}
       introImageLabel="Caseworker Portal Preview"
       introReverse
+      bannerImage={bannerImg}
+      introImage={introImg}
       features={features}
       faqs={faqs}
     />

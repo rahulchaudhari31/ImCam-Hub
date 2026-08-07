@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
 import FeaturePageTemplate from '../components/FeaturePageTemplate';
+import bannerImg from '../assets/images/features/Admin_banner.jpeg';
+import introImg from '../assets/images/features/Admin_dashboard.png';
 
 const features = [
   {
@@ -85,6 +87,8 @@ export default function FeatureAdmin() {
         'The Admin Dashboard gives you a real-time command center for your entire immigration practice. Manage users, configure workflows, monitor billing, and generate compliance reports without touching a spreadsheet.',
       ]}
       introImageLabel="Admin Dashboard Preview"
+      bannerImage={bannerImg}
+      introImage={introImg}
       features={features}
       faqs={faqs}
     />

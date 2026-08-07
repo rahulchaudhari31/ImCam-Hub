@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
 import FeaturePageTemplate from '../components/FeaturePageTemplate';
+import bannerImg from '../assets/images/features/Candidate_banner_.jpeg';
+import introImg from '../assets/images/features/Candidate_dashboard.png';
 
 const features = [
   {
@@ -85,6 +87,8 @@ export default function FeatureCandidate() {
         'The Candidate Portal puts applicants in control with real-time case tracking, secure document submission, e-signatures, and direct messaging. Every milestone is visible, every deadline is clear, and every document is accounted for.',
       ]}
       introImageLabel="Candidate Portal Preview"
+      bannerImage={bannerImg}
+      introImage={introImg}
       features={features}
       faqs={faqs}
     />

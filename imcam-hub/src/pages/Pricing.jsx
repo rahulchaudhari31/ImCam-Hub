@@ -21,7 +21,7 @@ const plans = [
     monthlyPrice: 349,
     annualPrice: 279,
     description:
-      'Everything a growing immigration practice needs to manage cases, clients, and compliance in one plac.',
+      'Everything a growing immigration practice needs to manage cases, clients, and compliance in one place.',
     features: [
       'Up to 100 active cases',
       '5 caseworker accounts',

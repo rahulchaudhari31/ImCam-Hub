@@ -31,7 +31,7 @@ function AnimateOnScroll({ children, className = '', delay = 0 }) {
   );
 }
 
-function KenBurnsBanner({ overlayText, overlaySubline, bannerColor }) {
+function KenBurnsBanner({ overlayText, overlaySubline, bannerColor, bannerImage }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -45,6 +45,16 @@ function KenBurnsBanner({ overlayText, overlaySubline, bannerColor }) {
         style={{ scale }}
         className={`absolute inset-0 ${bannerColor}`}
       >
+        {bannerImage && (
+          <img
+            src={bannerImage}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+        {bannerImage && (
+          <div className={`absolute inset-0 ${bannerColor} opacity-70`} />
+        )}
         <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
@@ -80,6 +90,8 @@ export default function FeaturePageTemplate({
   introReverse = false,
   features,
   faqs,
+  bannerImage,
+  introImage,
 }) {
   const featureRows = [];
   for (let i = 0; i < features.length; i += 3) {
@@ -93,6 +105,7 @@ export default function FeaturePageTemplate({
         overlayText={bannerText}
         overlaySubline={bannerSubline}
         bannerColor={bannerColor}
+        bannerImage={bannerImage}
       />
 
       {/* 2. Intro Section — 2-column */}
@@ -124,14 +137,22 @@ export default function FeaturePageTemplate({
             <AnimateOnScroll delay={0.15}>
               <div style={{ direction: 'ltr' }}>
                 <div className="bg-sand rounded-2xl border border-sand-dark aspect-[4/3] flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <div className="w-16 h-16 bg-blue-pale rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <div className="w-8 h-8 border-2 border-blue/20 rounded-lg" />
+                  {introImage ? (
+                    <img
+                      src={introImage}
+                      alt={introImageLabel}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  ) : (
+                    <div className="text-center px-6">
+                      <div className="w-16 h-16 bg-blue-pale rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div className="w-8 h-8 border-2 border-blue/20 rounded-lg" />
+                      </div>
+                      <p className="text-sm font-medium text-text-muted">
+                        {introImageLabel}
+                      </p>
                     </div>
-                    <p className="text-sm font-medium text-text-muted">
-                      {introImageLabel}
-                    </p>
-                  </div>
+                  )}
                 </div>
               </div>
             </AnimateOnScroll>
