@@ -31,7 +31,7 @@ function AnimateOnScroll({ children, className = '', delay = 0 }) {
   );
 }
 
-function KenBurnsBanner({ overlayText, overlaySubline, bannerColor, bannerImage }) {
+function KenBurnsBanner({ overlayText, overlaySubline, bannerColor, bannerImage, bannerOverlay = true }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -52,7 +52,7 @@ function KenBurnsBanner({ overlayText, overlaySubline, bannerColor, bannerImage 
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
-        {bannerImage && (
+        {bannerImage && bannerOverlay && (
           <div className={`absolute inset-0 ${bannerColor} opacity-70`} />
         )}
         <div className="absolute inset-0 opacity-[0.04]" style={{
@@ -93,6 +93,7 @@ export default function FeaturePageTemplate({
   bannerImage,
   introImage,
   middleImage,
+  bannerOverlay = true,
 }) {
   const featureRows = [];
   for (let i = 0; i < features.length; i += 3) {
@@ -107,6 +108,7 @@ export default function FeaturePageTemplate({
         overlaySubline={bannerSubline}
         bannerColor={bannerColor}
         bannerImage={bannerImage}
+        bannerOverlay={bannerOverlay}
       />
 
       {/* 2. Intro Section — 2-column */}

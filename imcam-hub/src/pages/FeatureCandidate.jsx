@@ -80,7 +80,7 @@ export default function FeatureCandidate() {
       roleName="Candidate / Applicant"
       bannerText="Built for Candidates"
       bannerSubline="Track your immigration journey in real time, upload documents securely, and stay connected with your caseworker — all in one place."
-      bannerColor="bg-amber"
+      bannerColor="bg-navy"
       introHeading="Your immigration journey, transparent."
       introText={[
         'Applying for immigration status is stressful enough without the added anxiety of wondering where your case stands. Candidates deserve clarity, not radio silence.',

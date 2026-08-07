@@ -81,7 +81,7 @@ export default function FeatureCaseworker() {
       roleName="Caseworker"
       bannerText="Built for Caseworkers"
       bannerSubline="Manage your matters faster with automated workflows, automated checklists, and deadline tracking that never lets anything slip."
-      bannerColor="bg-teal"
+      bannerColor="bg-navy"
       introHeading="Work smarter on every matter."
       introText={[
         'Caseworkers juggle dozens of active matters at any given time, each with unique deadlines, document requirements, and client expectations. The margin for error is zero.',
