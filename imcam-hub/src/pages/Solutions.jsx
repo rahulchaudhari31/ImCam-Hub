@@ -8,9 +8,9 @@ import {
   Calendar,
   Globe,
   PieChart,
-  Mic,
-  Volume2,
-  Rss,
+  CalendarClock,
+  MessageSquare,
+  FileText,
   LayoutDashboard,
   FolderOpen,
   Clock,
@@ -103,24 +103,24 @@ const solutions = [
     color: 'bg-emerald/15 text-emerald-light',
   },
   {
-    icon: Mic,
-    title: 'Speech to Text',
+    icon: CalendarClock,
+    title: 'Appointment Scheduler',
     description:
-      'Dictate case notes, meeting summaries, and client instructions directly into the platform — transcribed and tagged to the correct matter.',
+      'Book client consultations, interviews, and internal meetings directly in the platform — with a shared calendar everyone can see.',
     color: 'bg-cyan/15 text-cyan-light',
   },
   {
-    icon: Volume2,
-    title: 'Text to Speech',
+    icon: MessageSquare,
+    title: 'Secure Messaging',
     description:
-      'Listen to case summaries, deadline lists, and document checklists on the go — accessibility-first for caseworkers who need to multitask.',
+      'Send and receive case updates, requests, and documents through built-in messaging — keeping every conversation attached to the right matter.',
     color: 'bg-orange/15 text-orange-light',
   },
   {
-    icon: Rss,
-    title: 'Firm Feed',
+    icon: FileText,
+    title: 'Document Templates',
     description:
-      'A unified activity stream showing case updates, team actions, new filings, and compliance alerts — keeps everyone aligned without status meetings.',
+      'Start from ready-made templates for applications, forms, and letters, then tailor each document to the matter at hand.',
     color: 'bg-pink/15 text-pink-light',
   },
   {
@@ -145,7 +145,7 @@ const steps = [
     number: '02',
     title: 'Automate',
     description:
-      'Configure smart agents, workflow rules, and compliance checks to match your firm\'s processes — then watch repetitive tasks disappear.',
+      'Set up workflow rules, document templates, and compliance checks to match your firm\'s processes — then watch repetitive tasks disappear.',
     icon: Bot,
     color: 'bg-indigo/10 text-indigo',
   },

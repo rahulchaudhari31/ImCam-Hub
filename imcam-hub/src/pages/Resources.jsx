@@ -44,9 +44,9 @@ const categoryColors = {
 
 const resources = [
   {
-    title: 'How Automation Is Resolving LMIA Processing Bottlenecks in 2026',
+    title: 'Preparing for IRCC: A Practical Pre-Filing Checklist',
     excerpt:
-      'Labour Market Impact Assessment timelines have stretched to record highs. Here\'s how forward-thinking firms are using smart automation to cut turnaround by 40%.',
+      'Labour Market Impact Assessment timelines have stretched to record highs. Here\'s how forward-thinking firms are getting applications file-ready ahead of processing windows.',
     category: 'guides',
     readTime: '7 min read',
     date: 'Jul 15, 2026',
