@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
 import FeaturePageTemplate from '../components/FeaturePageTemplate';
+import bannerImg from '../assets/images/features/Client_banner.png';
+import introImg from '../assets/images/features/Client_dashboard_.png';
 
 const features = [
   {
@@ -86,6 +88,8 @@ export default function FeatureClient() {
       ]}
       introImageLabel="Client Portal Preview"
       introReverse
+      bannerImage={bannerImg}
+      introImage={introImg}
       features={features}
       faqs={faqs}
     />
