@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import FAQAccordion from './FAQAccordion';
 
 const featureColors = [
@@ -92,6 +92,7 @@ export default function FeaturePageTemplate({
   faqs,
   bannerImage,
   introImage,
+  middleImage,
 }) {
   const featureRows = [];
   for (let i = 0; i < features.length; i += 3) {
@@ -159,6 +160,76 @@ export default function FeaturePageTemplate({
           </div>
         </div>
       </section>
+
+      {middleImage && (
+        <section className="section-padding bg-white">
+          <div className="container-app">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <AnimateOnScroll delay={0.15}>
+                <div className="rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(11,31,58,0.12)] aspect-[4/3]">
+                  <img
+                    src={middleImage}
+                    alt=""
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </AnimateOnScroll>
+              <AnimateOnScroll>
+                <div>
+                  <span className="inline-flex items-center px-4 py-1.5 bg-blue-pale text-blue text-xs font-semibold rounded-full mb-5">
+                    Caseworker Portal
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-5">
+                    A day in the caseworker&apos;s seat
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-text-secondary leading-relaxed">
+                      Caseworkers juggle dozens of active matters at any given
+                      time, each with unique deadlines, document requirements,
+                      and client expectations. The margin for error is zero.
+                    </p>
+                    <p className="text-text-secondary leading-relaxed">
+                      From the moment a matter lands in your queue to the final
+                      filing, everything is streamlined — intake, drafting,
+                      reminders, and client communication all live in one
+                      focused workspace.
+                    </p>
+                    <ul className="space-y-3 pt-2">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-0.5 w-5 h-5 rounded-full bg-blue-pale text-blue flex items-center justify-center shrink-0">
+                          <Check size={14} />
+                        </span>
+                        <span className="text-sm text-text-secondary leading-relaxed">
+                          Smart checklists auto-generate for every case type and
+                          filing stage.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-0.5 w-5 h-5 rounded-full bg-blue-pale text-blue flex items-center justify-center shrink-0">
+                          <Check size={14} />
+                        </span>
+                        <span className="text-sm text-text-secondary leading-relaxed">
+                          Automated reminders at 30, 14, 7, and 1 day(s) before
+                          every deadline.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-0.5 w-5 h-5 rounded-full bg-blue-pale text-blue flex items-center justify-center shrink-0">
+                          <Check size={14} />
+                        </span>
+                        <span className="text-sm text-text-secondary leading-relaxed">
+                          One-click drafting from approved, on-brand templates.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 3. Feature Flow — Grid */}
       <section className="section-padding bg-sand">

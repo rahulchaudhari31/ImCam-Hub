@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import usePageMeta from '../hooks/usePageMeta';
 import FeaturePageTemplate from '../components/FeaturePageTemplate';
+import caseworkerImg from '../assets/images/features/Caseworker_image.jpg';
 import bannerImg from '../assets/images/features/Caseworker_banner.jpeg';
 import introImg from '../assets/images/features/Caseworker_dashboard.png';
 
@@ -90,6 +91,7 @@ export default function FeatureCaseworker() {
       introReverse
       bannerImage={bannerImg}
       introImage={introImg}
+      middleImage={caseworkerImg}
       features={features}
       faqs={faqs}
     />

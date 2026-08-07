@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import demoVideo from '../assets/video/gettyimages-2183092187-640_adpp.mp4';
+import caseworkerImg from '../assets/images/features/Caseworker_image.jpg';
 import {
   ArrowRight,
   Play,
@@ -560,8 +561,8 @@ export default function Home() {
             <AnimatedSection delay={0.15}>
               <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(11,31,58,0.12)]">
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
-                  alt="Immigration team collaborating around a table"
+                  src={caseworkerImg}
+                  alt="Caseworker handling a case call and taking notes"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
