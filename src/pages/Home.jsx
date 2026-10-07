@@ -10,6 +10,7 @@ import {
 } from '../services/cmsService';
 import {
   ArrowRight,
+  Brain,
   Check,
   ChevronDown,
   Shield,
@@ -86,7 +87,7 @@ const trustedFeatures = [
   {
     icon: Shield,
     title: 'Role-Based Access',
-    description: 'Secure by design. Every user sees only the cases and data their role needs — nothing more, nothing less.',
+    description: 'Every user sees only the cases and data relevant to their role.',
     color: 'bg-amber/25 text-amber-dark',
     cardGradient: 'bg-amber-pale',
     cardBorder: 'border-amber/60',
@@ -95,25 +96,25 @@ const trustedFeatures = [
   {
     icon: BarChart3,
     title: 'Real-Time Visibility',
-    description: 'Always know where everything stands. Live dashboards track every case, deadline, and workload the moment it changes.',
+    description: "Live dashboards track every case, deadline, and caseworker's progress instantly.",
     color: 'bg-emerald/25 text-emerald',
     cardGradient: 'bg-emerald-pale',
     cardBorder: 'border-emerald/60',
     titleColor: 'text-emerald',
   },
   {
-    icon: Building2,
+    icon: Users,
     title: 'Four Connected Portals',
-    description: 'Admin, caseworker, client, and business — one shared case, zero duplication, fully in sync.',
+    description: 'Admin, caseworker, client, and business, all sharing one live case.',
     color: 'bg-cyan/25 text-cyan',
     cardGradient: 'bg-cyan-pale',
     cardBorder: 'border-cyan/60',
     titleColor: 'text-cyan',
   },
   {
-    icon: FileSearch,
+    icon: Brain,
     title: 'AI-Powered Case Intelligence',
-    description: 'AI watches the details so your team can focus on the case — flagging risks and predicting delays before they happen.',
+    description: 'Auto-checks documents, flags compliance risks, and predicts delays early.',
     color: 'bg-purple/25 text-purple',
     cardGradient: 'bg-purple-pale',
     cardBorder: 'border-purple/60',
